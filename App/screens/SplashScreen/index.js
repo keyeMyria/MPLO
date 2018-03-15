@@ -14,7 +14,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import Images from '../../global/Images';
 import screens from '../../global/screens';
-import { callNavigationTabApp, callLoginScreen } from '../../../App';
+import { callSingleScreen } from '../../../App';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
     logo: {
         alignSelf:'center',
-        width:'50%',
+        width:'80%',
         resizeMode : 'contain',
   },
  
@@ -49,15 +49,17 @@ class SplashScreen extends Component {
   }
 
   navigateToNextScreen(){
-    if (typeof this.props.userLogin.auth_token !== 'undefined' && this.props.userLogin.auth_token !== null)
-    {
-      callNavigationTabApp();
-    }
+    callSingleScreen(screens.WELCOME_SCREEN);
 
-    else
-    {
-      callLoginScreen();
-    }
+    // if (typeof this.props.userLogin.auth_token !== 'undefined' && this.props.userLogin.auth_token !== null)
+    // {
+    //   callNavigationTabApp();
+    // }
+
+    // else
+    // {
+    //   callLoginScreen();
+    // }
   }
 
   render() {
@@ -72,11 +74,9 @@ class SplashScreen extends Component {
 }
 
 const mapStateToProps = state => ({
-  userLogin : state.user,
 });
 
 const mapDispatchToProps = dispatch => ({
-  resetRoute: (route) => dispatch(resetRoute(route)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SplashScreen);

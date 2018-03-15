@@ -41,28 +41,12 @@ module.exports = {
     awfulBlue: '#7ba3b2',
     goodOrange: '#ffb400',
   
-    // Nuvasive
-  
-    appStatusBarColor : '#dadada',
-    appPrimaryDarkColor: '#682566',
-    appPrimaryLightColor : '#4b4b4b',
-    appHeadingTextColor : '#4c4c4c',
-    appHeaderColor : '#e1e1e1',
-    appTabBackgroundColor : '#fafafa',
-    appTabSelectedBackgroundColor : '#e5e5e5',
-    appPrimaryBackgroundColor:'#fff',
-    appPrimaryBorderColor : '#5a5a5a',
-    appPrimaryIconColor : '#595959',
-    appHeaderSecondaryColor : '#919292',
-    appCarouselBackgroundColor : '#c3c3c3',
-    appSearchResultColor : '#676767',
-  
-  
-    appTabBackgroundColor : '#fafafa',
-    appTabSelectedBackgroundColor : '#e5e5e5',
-    appTabBorderColor : '#959595',
-    appTabActiveTintColor : '#59595c',
-    
+    // MPLO
+
+    appPrimaryDarkColor : '#2d3750',
+    appPrimaryRedColor : '#e91d62',
+
+    appPrimaryTextDarkColor : '#2e3941',
   
   };
   

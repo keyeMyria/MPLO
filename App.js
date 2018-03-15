@@ -13,7 +13,7 @@ registerScreens();
 const navigatorStyle = { navBarHidden: true }
 
 Navigation.startSingleScreenApp({
-  screen:screens.TEMP,
+  screen:screens.SPLASH_SCREEN,
 	navigatorStyle 
 });
 
@@ -36,6 +36,13 @@ export function callNavigationTabApp(){
     tabsStyle, appStyle,
   });
 
+}
+
+export function callSingleScreen(screenName){
+  Navigation.startSingleScreenApp({
+    screen:screenName,
+    navigatorStyle 
+  });
 }
 
 export function callLoginScreen(){
