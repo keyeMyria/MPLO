@@ -16,15 +16,15 @@ import Temp from '../index';
 // import AudioScreen from './Media/AudioScreen';
 // import PDFScreen from './Media/PDFScreen';
 
-//import configureStore from '../configureStore';
-//import { Provider } from 'react-redux';
+import configureStore from '../configureStore';
+import { Provider } from 'react-redux';
 
-//const confStore = configureStore();
+const confStore = configureStore();
 
 export function registerScreens() {
 
 //    Navigation.registerComponent('nuvasive.LOGIN_SCREEN', () => LoginScreen, confStore.store, Provider);
-    Navigation.registerComponent('nuvasive.TEMP', () => Temp);
+    Navigation.registerComponent('nuvasive.TEMP', () => Temp, confStore.store, Provider);
     // Navigation.registerComponent('nuvasive.LANDING_PAGE', () => LandingPage, confStore.store, Provider);
     // Navigation.registerComponent('nuvasive.QUERY_SCREEN', () => QueryScreen, confStore.store, Provider);
     // Navigation.registerComponent('nuvasive.RESULT_SCREEN', () => ResultScreen, confStore.store, Provider);
