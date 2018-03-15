@@ -83,5 +83,10 @@ export default {
     title: 'WELCOME',
     navigatorStyle: hiddenNavigatorStyle,
   },
+  CREATE_PROFILE: {
+    screen: 'MPLO.CREATE_PROFILE',
+    title: 'CREATE PROFILE',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
   
 };
