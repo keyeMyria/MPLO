@@ -6,12 +6,12 @@ import {
   View,
   TouchableOpacity, TouchableHighlight,
   Image, StatusBar,
-  Dimensions, Alert,
+  Dimensions, Alert, TextInput,
   AsyncStorage, ActivityIndicator, 
 } from 'react-native';
 
-import { Container, Header, Left, Body, Right, Button, Icon,
-  Title, Content, Input,Item, Form,
+import { Container, Header, Left, Body, Label, Right, Button, Icon,
+  Title, Content, Input,Item, Form, Textarea,
   Text } from 'native-base';
 
 //import Icon from 'react-native-vector-icons/Ionicons';
@@ -34,6 +34,7 @@ class EmpRegisterScreen extends Component {
     super(props);
     this.state = { 
         hasAvatarLoaded : true,
+        text: '', height: 0,
     };
   }
 
@@ -59,10 +60,11 @@ class EmpRegisterScreen extends Component {
     {
       return(
         <View style={[styles.avatarContainer, {backgroundColor : Colors.appLightBackgroundColor}]}>
-          <Image source={{uri:'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png'}} style={styles.avatarImage}/>
-          <View style={styles.addButtonContainer}>
+          <Image resizeMode="contain"
+            source={{uri:'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png'}} style={styles.avatarImage}/>
+          <Button style={styles.addButtonContainer}>
             <Image source={Icons.plusIcon} style={styles.addButton}></Image>
-          </View>
+          </Button>
         </View>
       );
     }
@@ -70,7 +72,11 @@ class EmpRegisterScreen extends Component {
     {
       return(
         <View style={styles.avatarContainer}>
-          <Image source={Icons.cross} style={{height:30,width:30}}/>
+          <Image source={Icons.avatarIcon} resizeMode="contain" style={styles.avatarIcon}/>
+          <Button style={styles.addButtonContainer}>
+            <Image source={Icons.plusIcon} style={styles.addButton}></Image>
+          </Button>
+          <Text style={styles.avatarText}>Add Photo</Text>
         </View>
       );
     }
@@ -88,17 +94,34 @@ class EmpRegisterScreen extends Component {
 
         {this.getAvatar()}
 
-        <Button block style={styles.connectButton}>
-          <Icon name='logo-linkedin' style={styles.connectButtonIcon}></Icon>
-          <Text style={styles.connectButtonText}>Connect LinkedIn</Text>
-        </Button>
+        <Form style={styles.formStyle}>
+          <Text style={styles.labelTextStyle}>Company Name</Text>
+          <TextInput maxLength={30} style={styles.inputTextStyle}/>
+          
+          <Text style={styles.labelTextStyle}>Location</Text>
+          <TextInput maxLength={25} style={styles.inputTextStyle}/>
 
-        <View style={styles.signInContainer}>
-          <Text style={styles.alreadyText}>ALREADY HAVE AN ACCOUNT?  </Text>
-          <TouchableOpacity style={styles.signInButton} onPress={()=>{Alert.alert('sign in')}}>
-            <Text style={styles.signInText}>SIGN IN</Text>
-          </TouchableOpacity>
-        </View>
+          <Text style={styles.labelTextStyle}>Tax ID</Text>
+          <TextInput style={styles.inputTextStyle}/>
+          
+          <Text style={styles.labelTextStyle}>About</Text>
+          <View style={styles.aboutInputContainer}>
+            <TextInput
+              {...this.props}
+              multiline={true}
+              onChangeText={(text) => {
+                  this.setState({ text })
+              }}
+              onContentSizeChange={(event) => {
+                  this.setState({ height: event.nativeEvent.contentSize.height })
+              }}
+              style={[styles.aboutInputTextStyle, {height: Math.max(deviceHeight * .03, this.state.height)}]}
+              value={this.state.text}
+            />
+          </View>
+              </Form>
+
+
       </View>
     )
   }

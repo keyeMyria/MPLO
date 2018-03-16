@@ -67,7 +67,7 @@ const styles = MediaQueryStyleSheet.create({
       marginTop:deviceHeight*.019,
     },
     alreadyText:{
-      color : Colors.alreadyTextDarkColor,
+      color : Colors.appHeaderLightColor,
       fontSize:14,
       fontFamily : 'Roboto-Medium',
     },
