@@ -49,5 +49,9 @@ module.exports = {
     appPrimaryTextDarkColor : '#2e3941',
     createProfileButton: '#e0eff0',
     createProfileButtonBorder: '#b2bfc0',
+
+    alreadyTextDarkColor : '#1d1d26',
+
+    linkedInButton : '#00649b',
   };
   

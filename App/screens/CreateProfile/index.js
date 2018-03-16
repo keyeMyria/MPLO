@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
   StyleSheet,
   View,
-  TouchableOpacity,
+  TouchableOpacity, TouchableHighlight,
   Image, StatusBar,
   Dimensions, Alert,
   AsyncStorage, ActivityIndicator, 
@@ -61,8 +61,20 @@ class CreateProfile extends Component {
           <Text style={styles.HeaderTitle}>Create</Text>
         </View>
 
-        <View style={styles.createButton}>
-        
+        <View style={styles.createButtonContainer}>
+          <Image source={Icons.create} style={styles.createButton}></Image>
+        </View>
+
+        <Button block style={styles.connectButton}>
+          <Icon name='logo-linkedin' style={styles.connectButtonIcon}></Icon>
+          <Text style={styles.connectButtonText}>Connect LinkedIn</Text>
+        </Button>
+
+        <View style={styles.signInContainer}>
+          <Text style={styles.alreadyText}>ALREADY HAVE AN ACCOUNT?  </Text>
+          <TouchableOpacity style={styles.signInButton} onPress={()=>{Alert.alert('sign in')}}>
+            <Text style={styles.signInText}>SIGN IN</Text>
+          </TouchableOpacity>
         </View>
       </View>
     )
