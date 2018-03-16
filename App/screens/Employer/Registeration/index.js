@@ -17,6 +17,7 @@ import { Container, Header, Left, Body, Label, Right, Button, Icon,
 //import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
+import Components from '../../../global/Components';
 import Images from '../../../global/Images';
 import Icons from '../../../global/Icons';
 import Colors from '../../../global/Colors';
@@ -88,10 +89,8 @@ class EmpRegisterScreen extends Component {
     return(
       <View style = {styles.container}>
         <StatusBar/>
-        <View style={styles.headerContainer}>
-          <Image source={Icons.cross} style={styles.crossIcon}></Image>
-          <Text style={styles.HeaderTitle}>Sign up</Text>
-        </View>
+        <Components.StatusBar/>
+        <Components.Header2/>
 
         {this.getAvatar()}
 

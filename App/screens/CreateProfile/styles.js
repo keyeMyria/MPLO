@@ -10,26 +10,6 @@ const styles = MediaQueryStyleSheet.create({
       flex: 1,
       backgroundColor: Colors.white,
     },
-    headerContainer:{
-      marginTop : deviceHeight * .05,
-      height : deviceHeight * .0278,
-      marginLeft : deviceWidth * 0.066,
-      flexDirection:'row',
-      alignItems:'flex-end',
-//      backgroundColor:'red',
-    },
-    crossIcon:{
-      height : deviceHeight * .0278,
-      width : deviceHeight * .0278,
-
-    },
-    HeaderTitle:{
-      fontSize : 14,
-      textAlign:'center',
-      marginLeft:deviceWidth * .31,
-      fontWeight:'500',
-      letterSpacing:1,
-    },
     createButtonContainer:{
       width:deviceWidth*.704,
       height : deviceHeight * .449,

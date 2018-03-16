@@ -17,6 +17,7 @@ import { Container, Header, Left, Body, Right, Button, Icon,
 //import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
+import Components from '../../global/Components';
 import Images from '../../global/Images';
 import Icons from '../../global/Icons';
 import screens from '../../global/screens';
@@ -56,10 +57,8 @@ class CreateProfile extends Component {
     return(
       <View style = {styles.container}>
         <StatusBar/>
-        <View style={styles.headerContainer}>
-          <Image source={Icons.cross} style={styles.crossIcon}></Image>
-          <Text style={styles.HeaderTitle}>Create</Text>
-        </View>
+        <Components.StatusBar/>
+        <Components.Header2/>
 
         <View style={styles.createButtonContainer}>
           <Image source={Icons.create} style={styles.createButton}></Image>
