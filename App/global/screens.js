@@ -93,6 +93,11 @@ export default {
     title: 'REGISTER EMPLOYER',
     navigatorStyle: hiddenNavigatorStyle,
   },
+  EMP_PROFILE_SCREEN: {
+    screen: 'MPLO.EMP_PROFILE_SCREEN',
+    title: 'REGISTER EMPLOYER',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
   
   
 };

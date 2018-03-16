@@ -5,6 +5,7 @@ import SplashScreen from './SplashScreen';
 import WelcomeScreen from './WelcomeScreen';
 import CreateProfile from './CreateProfile';
 import EmpRegisterScreen from './Employer/Registeration';
+import EmpProfileScreen from './Employer/Profile';
 
 import configureStore from '../configureStore';
 import { Provider } from 'react-redux';
@@ -18,5 +19,6 @@ export function registerScreens() {
     Navigation.registerComponent('MPLO.WELCOME_SCREEN', () => WelcomeScreen, confStore.store, Provider);
     Navigation.registerComponent('MPLO.CREATE_PROFILE', () => CreateProfile, confStore.store, Provider);
     Navigation.registerComponent('MPLO.EMP_REGISTER_SCREEN', () => EmpRegisterScreen, confStore.store, Provider);
+    Navigation.registerComponent('MPLO.EMP_PROFILE_SCREEN', () => EmpProfileScreen, confStore.store, Provider);
 
 }
