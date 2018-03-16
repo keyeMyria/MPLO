@@ -29,12 +29,13 @@ const deviceWidth = Dimensions.get('window').width;
 class EmpRegisterScreen extends Component {
   
   welomeMessageString = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+  about = 'Arkotech has been in business since 2001 and has been serving clients both on the East Coast and West Coast of U.S. since then it has maintained a perfect rating and client relationship throughout.';
 
   constructor(props){
     super(props);
     this.state = { 
         hasAvatarLoaded : true,
-        text: '', height: 0,
+        text: this.about, height: 0,
     };
   }
 
@@ -108,18 +109,28 @@ class EmpRegisterScreen extends Component {
           <View style={styles.aboutInputContainer}>
             <TextInput
               {...this.props}
-              multiline={true}
+              multiline={true} maxLength = {250}
               onChangeText={(text) => {
                   this.setState({ text })
               }}
               onContentSizeChange={(event) => {
-                  this.setState({ height: event.nativeEvent.contentSize.height })
+                  this.setState({ height: event.nativeEvent.contentSize.height + 8 })
               }}
               style={[styles.aboutInputTextStyle, {height: Math.max(deviceHeight * .03, this.state.height)}]}
               value={this.state.text}
             />
           </View>
-              </Form>
+
+          <Button block style={styles.createButton}>
+            <Text style={styles.createButtonText}>CREATE</Text>
+          </Button>
+          <View style={styles.signInContainer}>
+            <Text style={styles.alreadyText}>ALREADY HAVE AN ACCOUNT?  </Text>
+            <TouchableOpacity style={styles.signInButton} onPress={()=>{Alert.alert('sign in')}}>
+              <Text style={styles.signInText}>SIGN IN</Text>
+            </TouchableOpacity>
+          </View>
+        </Form>
 
 
       </View>

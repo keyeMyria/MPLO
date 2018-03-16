@@ -105,6 +105,7 @@ const styles = MediaQueryStyleSheet.create({
 //    backgroundColor:'blue',
     borderBottomWidth:1,
     borderBottomColor : Colors.appPrimaryRedColor,
+    paddingBottom : deviceHeight * .012,
   },
   aboutInputTextStyle:{
     color : Colors.appPrimaryTextDarkColor,
@@ -114,9 +115,9 @@ const styles = MediaQueryStyleSheet.create({
     fontSize:11,
 //    borderBottomWidth:5,
 //    borderBottomColor : Colors.appPrimaryRedColor,
-    marginTop:deviceHeight*.025,
-    marginBottom : deviceHeight * .015,
-  //  backgroundColor:'red',
+    marginTop:deviceHeight*.01,
+     paddingBottom : deviceHeight * .015,
+//    backgroundColor:'red',
   },
   inputText:{
     height:100,
@@ -132,14 +133,11 @@ const styles = MediaQueryStyleSheet.create({
     marginLeft : deviceWidth * .164,
     marginTop : deviceHeight * .12,
   },
-  connectButton:{
-    width : deviceWidth * .704,
-    marginLeft:deviceWidth*.148,
-    marginTop:deviceHeight*.225, 
-    backgroundColor:Colors.linkedInButton,     
+  createButton:{
+    marginTop : deviceHeight * .027,
+    backgroundColor:Colors.appPrimaryDarkColor,     
   },
-  connectButtonIcon:{},
-  connectButtonText:{
+  createButtonText:{
     fontFamily : 'Roboto-Regular',
 //      height : deviceHeight * .031,
     fontSize:18,
@@ -149,21 +147,20 @@ const styles = MediaQueryStyleSheet.create({
   },
   signInContainer:{
     flexDirection:'row',
-    marginLeft:deviceWidth*.148,
     marginTop:deviceHeight*.019,
+    justifyContent:'center',
   },
   alreadyText:{
-    color : Colors.alreadyTextDarkColor,
-    fontSize:14,
+    color : Colors.appHeaderLightColor,
+    fontSize:11,
     fontFamily : 'Roboto-Medium',
   },
   signInButton:{},
   signInText:{
-    fontSize:16,
+    fontSize:11,
     fontFamily: 'Roboto-Medium',
     fontWeight:'900',
     color:'#000',
-    marginTop:-2,
   },
   
 });

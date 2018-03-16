@@ -15,7 +15,7 @@ const styles = MediaQueryStyleSheet.create({
       height : deviceHeight * .0278,
       marginLeft : deviceWidth * 0.066,
       flexDirection:'row',
-      alignItems:'flex-start',
+      alignItems:'flex-end',
 //      backgroundColor:'red',
     },
     crossIcon:{
@@ -24,7 +24,7 @@ const styles = MediaQueryStyleSheet.create({
 
     },
     HeaderTitle:{
-      fontSize : 18,
+      fontSize : 14,
       textAlign:'center',
       marginLeft:deviceWidth * .31,
       fontWeight:'500',
@@ -63,22 +63,22 @@ const styles = MediaQueryStyleSheet.create({
     },
     signInContainer:{
       flexDirection:'row',
-      marginLeft:deviceWidth*.148,
       marginTop:deviceHeight*.019,
+      justifyContent:'center',
     },
     alreadyText:{
       color : Colors.appHeaderLightColor,
-      fontSize:14,
+      fontSize:11,
       fontFamily : 'Roboto-Medium',
     },
     signInButton:{},
     signInText:{
-      fontSize:16,
+      fontSize:11,
       fontFamily: 'Roboto-Medium',
       fontWeight:'900',
       color:'#000',
-      marginTop:-2,
     },
+    
 });
 
 export default styles;
