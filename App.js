@@ -13,7 +13,7 @@ registerScreens();
 const navigatorStyle = { navBarHidden: true }
 
 Navigation.startSingleScreenApp({
-  screen:screens.CREATE_PROFILE,
+  screen:screens.EMP_REGISTER_SCREEN,
 	navigatorStyle 
 });
 

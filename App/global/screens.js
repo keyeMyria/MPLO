@@ -88,5 +88,11 @@ export default {
     title: 'CREATE PROFILE',
     navigatorStyle: hiddenNavigatorStyle,
   },
+  EMP_REGISTER_SCREEN: {
+    screen: 'MPLO.EMP_REGISTER_SCREEN',
+    title: 'REGISTER EMPLOYER',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
+  
   
 };

@@ -1,5 +1,5 @@
 import { MediaQueryStyleSheet } from 'react-native-responsive';
-import Colors from '../../global/Colors';
+import Colors from '../../../global/Colors';
 import { Dimensions } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
@@ -26,20 +26,45 @@ const styles = MediaQueryStyleSheet.create({
     HeaderTitle:{
       fontSize : 18,
       textAlign:'center',
-      marginLeft:deviceWidth * .31,
+      flex:1,
+      marginLeft:deviceWidth * -.1,
       fontWeight:'500',
       letterSpacing:1,
     },
-    createButtonContainer:{
-      width:deviceWidth*.704,
-      height : deviceHeight * .449,
+    avatarContainer:{
+      width: deviceWidth*.362,
+      height : deviceWidth * .362,
       backgroundColor : Colors.createProfileButton,
-      borderWidth:1,
-      borderColor : Colors.createProfileButtonBorder,
-      borderRadius:5,
-      marginLeft:deviceWidth*.148,
-      marginTop:deviceHeight*.11,
+      borderRadius: deviceWidth * .18,
+      marginLeft:deviceWidth*.32,
+      marginTop:deviceHeight*.036,
     },
+    avatarImage:{
+        flex:1,
+        // width:'undefined',
+        // height:'undefined',
+        borderRadius: deviceWidth * .18,
+    },
+    addButtonContainer:{
+        position:'absolute',
+        right: deviceWidth *.016,
+        top: deviceHeight * .008,
+        backgroundColor:'red',
+        width : deviceWidth * .08,
+        height : deviceWidth * .08,
+        borderRadius : deviceWidth * .04,
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    addButton:{
+      height:deviceWidth * .034,
+      width:deviceWidth * .034,
+    },
+
+
+
+
+
     createButton:{
       width : deviceWidth * .377,
       height : deviceWidth * .377,
@@ -79,6 +104,7 @@ const styles = MediaQueryStyleSheet.create({
       color:'#000',
       marginTop:-2,
     },
+    
 });
 
 export default styles;

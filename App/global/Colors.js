@@ -42,7 +42,7 @@ module.exports = {
     goodOrange: '#ffb400',
   
     // MPLO
-
+    appLightBackgroundColor : '#fff',
     appPrimaryDarkColor : '#2d3750',
     appPrimaryRedColor : '#e91d62',
 
