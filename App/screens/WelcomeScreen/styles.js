@@ -1,6 +1,6 @@
 import { MediaQueryStyleSheet } from 'react-native-responsive';
 import Colors from '../../global/Colors';
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -12,7 +12,7 @@ const styles = MediaQueryStyleSheet.create({
     },
     bg: {
       width : deviceWidth,
-      height : deviceHeight*.52,
+      height : Platform.OS === 'ios' ? deviceHeight*.52 : ((deviceHeight * .52)-20),
       resizeMode : 'cover',
     },
     logo:{
@@ -52,6 +52,7 @@ const styles = MediaQueryStyleSheet.create({
       marginLeft:deviceWidth * .055,
       marginTop : deviceHeight * .091,
       backgroundColor : Colors.appPrimaryDarkColor,
+      elevation: 0,
     },
     hiringMeButton:{
       width:deviceWidth * .889,
@@ -60,6 +61,7 @@ const styles = MediaQueryStyleSheet.create({
       backgroundColor:Colors.white,
       borderColor : Colors.appPrimaryDarkColor,
       borderWidth:.5,
+      elevation: 0,
     },
     hiringMeButtonText:{
       color:Colors.appPrimaryDarkColor,

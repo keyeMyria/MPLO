@@ -61,7 +61,7 @@ class EmpRegisterScreen extends Component {
     if (this.state.hasAvatarLoaded === true)
     {
       return(
-        <View style={[styles.avatarContainer, {backgroundColor : Colors.appLightBackgroundColor}]}>
+        <View style={[styles.avatarContainer]}>
           <Image resizeMode="contain"
             source={{uri:'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png'}} style={styles.avatarImage}/>
           <Button style={styles.addButtonContainer}>
@@ -96,21 +96,22 @@ class EmpRegisterScreen extends Component {
 
         <Form style={styles.formStyle}>
           <Text style={styles.labelTextStyle}>Company Name</Text>
-          <TextInput maxLength={30} style={styles.inputTextStyle}/>
+          <TextInput underlineColorAndroid="transparent" maxLength={30} style={styles.inputTextStyle}/>
           
           <Text style={styles.labelTextStyle}>Location</Text>
-          <TextInput maxLength={25} style={styles.inputTextStyle}/>
+          <TextInput underlineColorAndroid="transparent" maxLength={25} style={styles.inputTextStyle}/>
 
           <Text style={styles.labelTextStyle}>Tax ID</Text>
-          <TextInput style={styles.inputTextStyle}/>
+          <TextInput underlineColorAndroid="transparent" style={styles.inputTextStyle}/>
           
           <Text style={styles.labelTextStyle}>About</Text>
           <View style={styles.aboutInputContainer}>
             <TextInput
-              {...this.props}
-              multiline={true} maxLength = {250}
-              onChangeText={(text) => {
-                  this.setState({ text })
+                {...this.props}
+                multiline={true} maxLength = {250}
+                onChangeText={(text) => {
+                this.setState({ text })
+                underlineColorAndroid="transparent"
               }}
               onContentSizeChange={(event) => {
                   this.setState({ height: event.nativeEvent.contentSize.height + 8 })
