@@ -1,6 +1,6 @@
 import { MediaQueryStyleSheet } from 'react-native-responsive';
 import Colors from '../../../global/Colors';
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -114,7 +114,8 @@ const styles = MediaQueryStyleSheet.create({
   },
   createButton:{
     marginTop : deviceHeight * .027,
-    backgroundColor:Colors.appPrimaryDarkColor,     
+    backgroundColor:Colors.appPrimaryDarkColor, 
+    elevation:0,    
   },
   createButtonText:{
     fontFamily : 'Roboto-Regular',
@@ -126,7 +127,8 @@ const styles = MediaQueryStyleSheet.create({
   },
   signInContainer:{
     flexDirection:'row',
-    marginTop:deviceHeight*.019,
+    marginTop:deviceHeight*.01,
+    marginBottom : Platform.OS === 'ios' ? 0 : deviceHeight*.01,
     justifyContent:'center',
   },
   alreadyText:{

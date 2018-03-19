@@ -52,6 +52,12 @@ module.exports = {
     createProfileButton: '#e0eff0',
     createProfileButtonBorder: '#b2bfc0',
 
+    jobStatTextColor : '#8096a1',
+    jobLocationTextColor : '#979da1',
+    starRatingColor : '#ffd500',
+    emptyStarColor : '#cfd8dc',
+    emptyLine : '#f1f1f3',
+
     linkedInButton : '#00649b',
   };
   

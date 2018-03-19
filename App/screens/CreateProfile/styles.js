@@ -1,6 +1,6 @@
 import { MediaQueryStyleSheet } from 'react-native-responsive';
 import Colors from '../../global/Colors';
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -30,7 +30,8 @@ const styles = MediaQueryStyleSheet.create({
       width : deviceWidth * .704,
       marginLeft:deviceWidth*.148,
       marginTop:deviceHeight*.225, 
-      backgroundColor:Colors.linkedInButton,     
+      backgroundColor:Colors.linkedInButton,
+      elevation : 0,     
     },
     connectButtonIcon:{},
     connectButtonText:{
@@ -44,6 +45,7 @@ const styles = MediaQueryStyleSheet.create({
     signInContainer:{
       flexDirection:'row',
       marginTop:deviceHeight*.019,
+      marginBottom : Platform.OS === 'ios' ? 0 : deviceHeight*.01,
       justifyContent:'center',
     },
     alreadyText:{
