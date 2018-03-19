@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import com.facebook.react.ReactPackage;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
+import com.airbnb.android.react.maps.MapsPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -21,7 +22,8 @@ public class MainApplication extends NavigationApplication {
          // No need to add RnnPackage and MainReactPackage
          return Arrays.<ReactPackage>asList(
             new SvgPackage(),
-            new MPAndroidChartPackage()
+            new MPAndroidChartPackage(),
+            new MapsPackage()
          );
      }
 

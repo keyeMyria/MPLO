@@ -141,7 +141,7 @@ class EmpProfileScreen extends Component {
     return(
       <View style = {styles.container}>
         <StatusBar
-          backgroundColor="white"
+          backgroundColor={Colors.appLightBackgroundColor}
           barStyle="dark-content"
         />
         <Components.StatusBar/>
