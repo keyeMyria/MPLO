@@ -5,7 +5,7 @@ import {
   StyleSheet,
   View,
   TouchableOpacity, TouchableHighlight,
-  Image, StatusBar,
+  Image, StatusBar, processColor,
   Dimensions, Alert, TextInput,
   AsyncStorage, ActivityIndicator, 
 } from 'react-native';
@@ -25,6 +25,7 @@ import screens from '../../../global/screens';
 
 import StarRating from 'react-native-star-rating';
 import { StackedBarChart } from 'react-native-svg-charts'
+import {BarChart} from 'react-native-charts-wrapper';
 
 
 
@@ -42,7 +43,35 @@ class EmpProfileScreen extends Component {
     this.state = { 
         hasAvatarLoaded : true,
         text: this.about, height: 0,
-        starCount: 2.5
+        starCount: 2.5,
+
+        legend: {
+          enabled: true,
+          textSize: 14,
+          form: "SQUARE",
+          formSize: 14,
+          xEntrySpace: 10,
+          yEntrySpace: 5,
+          wordWrapEnabled: true
+        },
+        data: {
+          dataSets: [{
+            values: [{y:[40, 30, 20], marker: ["row1", "row2", "row3"]}, {y:[10, 20, 10], marker:"second"}, {y:[30, 20, 50], marker:["hello", "world","third"]}, {y:[30, 50, 10], marker:"fourth"}],
+            label: 'Stacked Bar dataset',
+            config: {
+              colors: [processColor('#C0FF8C'), processColor('#FFF78C'), processColor('#FFD08C')],
+              stackLabels: ['Engineering', 'Sales', 'Marketing']
+            }
+          }],
+        },
+        highlights: [{x: 1, stackIndex: 2}, {x: 2, stackIndex: 1}],
+        xAxis: {
+          valueFormatter: ['Q1', 'Q2', 'Q3', 'Q4'],
+          granularityEnabled: true,
+          granularity: 1
+  
+        }
+  
     };
   }
 
@@ -103,38 +132,20 @@ class EmpProfileScreen extends Component {
       <View style = {styles.lineDraw}></View>
     );
   }
+  renderBarGraph(val){
+    
+  }
 
   render() {
-    const data = [
-      {
-          month: new Date(2015, 0, 1),
-          apples: 3840,
-          bananas: 1920,
-      },
-      {
-          month: new Date(2015, 1, 1),
-          apples: 1600,
-          bananas: 1440,
-      },
-      {
-          month: new Date(2015, 2, 1),
-          apples: 640,
-          bananas: 960,
-      },
-      {
-          month: new Date(2015, 3, 1),
-          apples: 3320,
-          bananas: 480,
-      },
-  ]
-
-  const colors = [ '#7b4173', '#a55194', ]
-  const keys   = [ 'apples', 'bananas',]    
+       
     return(
       <View style = {styles.container}>
-        <StatusBar/>
+        <StatusBar
+          backgroundColor="white"
+          barStyle="dark-content"
+        />
         <Components.StatusBar/>
-        <Components.MainHeader title="Alejandro Martinez"/>
+        <Components.MainHeader title="ALENJANDO MARTINEZ"/>
 
         <Image style={styles.bg} source={Images.Bg3}/>
         <View style={styles.bottomContainer}>
@@ -176,15 +187,25 @@ class EmpProfileScreen extends Component {
             <Text style={styles.experienceText}>{this.experienceStory}</Text>
           </View>
           {this.drawLine()}
-          <View>
-          <StackedBarChart
-                style={ { height: 200 } }
-                keys={ keys }
-                colors={ colors }
-                data={ data }
-                showGrid={ false }
-                contentInset={ { top: 30, bottom: 30 } }
-            />
+
+
+          <View style={styles.skillsContainer}>
+            <View style={styles.skillItemContainer}>
+              <Text style={styles.skillHeading}>PRESENTATION SKILLS</Text>
+              <Components.BarGraph filledValue={0.7}/>
+            </View>
+            <View style={styles.skillItemContainer}>
+              <Text style={styles.skillHeading}>PRODUCT KNOWLEDGE</Text>
+              <Components.BarGraph filledValue={0.8}/>
+            </View>
+            <View style={styles.skillItemContainer}>
+              <Text style={styles.skillHeading}>TERRITORY MANAGMENT</Text>
+              <Components.BarGraph filledValue={0.9}/>
+            </View>
+            <View style={styles.skillItemContainer}>
+              <Text style={styles.skillHeading}>PROSPECTING SKILLS</Text>
+              <Components.BarGraph filledValue={0.7}/>
+            </View>
           </View>
         </View>
 

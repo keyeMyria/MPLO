@@ -7,12 +7,11 @@ const deviceWidth = Dimensions.get('window').width;
 
 const styles = MediaQueryStyleSheet.create({
   headerContainer:{
-    marginTop : deviceHeight * .023,
-    height : deviceHeight * .025,
+    height : deviceHeight * .0637,
     marginLeft : deviceWidth * 0.051,
     marginRight:deviceWidth * .049,
     flexDirection:'row',
-    alignItems:'flex-start',
+    alignItems:'center',
   //  backgroundColor:'red',
   },
   title:{

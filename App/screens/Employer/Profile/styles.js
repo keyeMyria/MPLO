@@ -12,8 +12,7 @@ const styles = MediaQueryStyleSheet.create({
   },
   bg:{
     width: deviceWidth,
-    height : deviceHeight * .292,
-    marginTop : deviceHeight * .024,
+    height : deviceHeight * .282,
   },
   statInfoContainer:{
     flexDirection:'row',
@@ -43,7 +42,7 @@ const styles = MediaQueryStyleSheet.create({
     justifyContent : 'space-between',
   },
   statTitle:{
-    fontSize:16,
+    fontSize:20,
     color : Colors.appHeaderDarkColor,
     fontFamily : 'Roboto-Medium',
   },
@@ -70,7 +69,7 @@ const styles = MediaQueryStyleSheet.create({
   moreInfoContainer:{
 //    backgroundColor:'pink',
     alignItems:'center',
-    marginTop : deviceHeight * .019,
+    marginTop : deviceHeight * .016,
   },
   jobTitleText:{
     fontSize:12,
@@ -81,7 +80,7 @@ const styles = MediaQueryStyleSheet.create({
     fontSize:7,
     fontFamily : 'Roboto-Bold',
     color : Colors.jobLocationTextColor,
-    marginTop : deviceHeight * .008,
+    marginTop : deviceHeight * .002,
   },
   starContainer:{
     marginTop : deviceHeight * .015,
@@ -96,12 +95,28 @@ const styles = MediaQueryStyleSheet.create({
     width : deviceWidth * .868,
     marginLeft: deviceWidth * .085,
     textAlign:'left',
+    marginTop : deviceHeight * .017,
   },
   lineDraw:{
     height:deviceHeight * .002,
     width : deviceWidth,
     backgroundColor: Colors.emptyLine,
-    marginTop : deviceHeight * .0168,
+    marginTop : deviceHeight * .016,
+  },
+  skillsContainer:{
+//    backgroundColor:'pink',
+    marginTop : deviceHeight * .013,
+    width : deviceWidth * .647,
+    marginLeft : deviceWidth * .13,
+  },
+  skillItemContainer:{
+//    backgroundColor:Colors.blue,
+    marginTop : deviceHeight * .019,
+  },
+  skillHeading:{
+    fontFamily : 'Roboto-Bold',
+    fontSize : 9,
+    marginBottom : deviceHeight * .01,
   }
 });
 
