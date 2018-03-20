@@ -1,18 +1,24 @@
 import { MediaQueryStyleSheet } from 'react-native-responsive';
-import Colors from '../../../global/Colors';
+import Colors from '../../global/Colors';
 import { Dimensions } from 'react-native';
 
-const deviceHeight = Dimensions.get('window').height;
-const deviceWidth = Dimensions.get('window').width;
+const cardHeight = 0.63;
+const cardWidth = 0.8;
+
+const deviceHeight = Dimensions.get('window').height * cardHeight;
+const deviceWidth = Dimensions.get('window').width * cardWidth;
 
 const styles = MediaQueryStyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.blueFbColor,
+    borderRadius : 10,
+    height : deviceHeight,
+    width : deviceWidth,
   },
   bg:{
     width: deviceWidth,
-    height : deviceHeight * .282,
+    height : deviceHeight * .2,
   },
   statInfoContainer:{
     flexDirection:'row',
@@ -36,25 +42,25 @@ const styles = MediaQueryStyleSheet.create({
   jobsStatContainer:{
     alignItems:'center',
     width : deviceWidth * .204,
-//    backgroundColor:'pink',
+    //backgroundColor:'pink',
     marginTop : deviceHeight * .03,
     height : deviceHeight * .084,
     justifyContent : 'space-between',
   },
   statTitle:{
-    fontSize:20,
+    fontSize:12,
     color : Colors.appHeaderDarkColor,
     fontFamily : 'Roboto-Medium',
   },
   statText:{
-    fontSize : 10,
+    fontSize : 8,
     color : Colors.jobStatTextColor,
     fontFamily : 'Roboto-Medium',
   },
   avatarContainer:{
     position : 'absolute',
     bottom:0,
-    zIndex:3,
+    zIndex:1,
 //    alignItems:'center',
     marginLeft : (deviceWidth * .44) - (deviceWidth * .2),
     borderRadius : deviceWidth * .2,
@@ -107,7 +113,7 @@ const styles = MediaQueryStyleSheet.create({
     width: deviceWidth * .057,
   },
   experienceText:{
-    fontSize:12,
+    fontSize:9,
     fontFamily : 'Roboto-Regular',
     letterSpacing:1,
     width : deviceWidth * .868,
@@ -133,7 +139,7 @@ const styles = MediaQueryStyleSheet.create({
   },
   skillHeading:{
     fontFamily : 'Roboto-Bold',
-    fontSize : 9,
+    fontSize : 6,
     marginBottom : deviceHeight * .01,
   }
 });

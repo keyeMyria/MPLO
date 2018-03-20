@@ -8,17 +8,19 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
+  Text, Alert,
   View, Dimensions
 } from 'react-native';
 import { connect } from 'react-redux';
 
 import Components from './global/Components';
+import Colors from './global/Colors';
 
 import MapView, { Marker, ProviderPropType } from 'react-native-maps';
+import SwipeCards from 'react-native-swipe-cards';
 
-const flagBlueImg = {uri:'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/map-marker-icon.png'};
-const flagPinkImg =  {uri:'http://www.clker.com/cliparts/G/R/Y/M/S/g/map-pin-yellow.svg'};
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -40,6 +42,34 @@ const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 const SPACE = 0.01;
 
+ 
+class Card extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+ 
+  render() {
+    return (
+      <View style={[styles.card, {backgroundColor: this.props.backgroundColor}]}>
+        <Text>{this.props.text}</Text>
+      </View>
+    )
+  }
+}
+ 
+class NoMoreCards extends Component {
+  constructor(props) {
+    super(props);
+  }
+ 
+  render() {
+    return (
+      <View>
+        <Text style={styles.noMoreCardsText}>No more cards</Text>
+      </View>
+    )
+  }
+}
 
 class App extends Component<Props> {
 
@@ -47,112 +77,65 @@ class App extends Component<Props> {
   constructor(props){
     super(props);
     this.state = { 
-      marker1: true,
-      marker2: false,
-      region : {
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      },
-      markers : [
-        {
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-          title: 'Waleed Farooqi',
-          subtitle: '1234 Foo Drive'
-        }
-      ],
+      cards: [
+        {text: 'Tomato', backgroundColor: 'red'},
+        {text: 'Aubergine', backgroundColor: 'purple'},
+        {text: 'Courgette', backgroundColor: 'green'},
+        {text: 'Blueberry', backgroundColor: 'blue'},
+        {text: 'Umm...', backgroundColor: 'cyan'},
+        {text: 'orange', backgroundColor: 'orange'},
+      ]
     };
   }
-
-  getInitialState() {
-    return {
-      region: {
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      },
-    };
+  handleYup (card) {
+    Alert.alert(`Yup for ${card.text}`)
   }
-  
-  onRegionChange(_region) {
-    this.setState({ region : _region });
+  handleNope (card) {
+    Alert.alert(`Nope for ${card.text}`)
   }
-  
+  handleMaybe (card) {
+    Alert.alert(`Maybe for ${card.text}`)
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text>Waleed</Text>
-        <MapView
-          provider={this.props.provider}
-          style={{height : height * .4, width : width}}
-          initialRegion={{
-            latitude: LATITUDE,
-            longitude: LONGITUDE,
-            latitudeDelta: LATITUDE_DELTA,
-            longitudeDelta: LONGITUDE_DELTA,
-          }}
-        >
-        <Marker
-            onPress={() => this.setState({ marker1: !this.state.marker1 })}
-            coordinate={{
-              latitude: LATITUDE + SPACE,
-              longitude: LONGITUDE + SPACE,
-            }}
-            centerOffset={{ x: -18, y: -60 }}
-            anchor={{ x: 0.69, y: 1 }}
-            image={this.state.marker1 ? flagBlueImg : flagPinkImg}
-          >
-            <Text style={styles.marker}>X</Text>
-          </Marker>
-          <Marker
-            onPress={() => this.setState({ marker2: !this.state.marker2 })}
-            coordinate={{
-              latitude: LATITUDE - SPACE,
-              longitude: LONGITUDE - SPACE,
-            }}
-            centerOffset={{ x: -42, y: -60 }}
-            anchor={{ x: 0.84, y: 1 }}
-            image={this.state.marker2 ? flagBlueImg : flagPinkImg}
-          />
-          <Marker
-            onPress={() => this.setState({ marker2: !this.state.marker2 })}
-            coordinate={{
-              latitude: LATITUDE + SPACE,
-              longitude: LONGITUDE - SPACE,
-            }}
-            centerOffset={{ x: -42, y: -60 }}
-            anchor={{ x: 0.84, y: 1 }}
-            opacity={0.6}
-            image={this.state.marker2 ? flagBlueImg : flagPinkImg}
-          />
-        </MapView>
-        <Text>Farooqi</Text>
-      </View>
+        {/* <Components.ProfileCard/> */}
+      <SwipeCards
+      cards={this.state.cards}
+      renderCard={(cardData) => <Components.ProfileCard />}
+      renderNoMoreCards={() => <NoMoreCards />}
+
+      handleYup={this.handleYup}
+      handleNope={this.handleNope}
+      handleMaybe={this.handleMaybe}
+      showYup = {false} showNope = {false}
+      stack={true}
+      stackOffsetX={0}
+      stackOffsetY = {10}
+      containerStyle={{ borderRadius : 35,}}
+    />
+    </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-
-    backgroundColor: '#F5FCFF',
+  container:{
+    flex:1,
+    marginTop : 20,
+    marginLeft : 20,
+    height : deviceHeight * .6,
+    backgroundColor : Colors.blue,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  card: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 300,
+    height : 100
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  noMoreCardsText: {
+    fontSize: 22,
+  }
 });
 
 const mapStateToProps = state => ({

@@ -36,7 +36,7 @@ const deviceWidth = Dimensions.get('window').width;
 
 class EmpProfileScreen extends Component {
   
-  experienceStory = 'Experienced Sales Associate with a demonstrated history of working in the retail industry. Skilled in Management, Teamwork, Leadership, and Project Management.';
+  experienceStory = 'ent, Teamwork, Leadership, and Project Management.';
   
   constructor(props){
     super(props);
@@ -157,6 +157,9 @@ class EmpProfileScreen extends Component {
             </View>
             <View style={styles.avatarContainer}>
               <Image source={{uri:Images.avatarURL}} resizeMode="cover" style={styles.avatar}></Image>
+              <TouchableOpacity style={styles.addAvatarButtonContainer}>
+                <Image source={Icons.Star} style={styles.addAvatarButtonIcon}></Image>
+              </TouchableOpacity>
             </View>
             <View style={styles.jobsStatContainer}>
               <Text style={styles.statTitle}>22</Text>
