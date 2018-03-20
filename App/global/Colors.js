@@ -58,6 +58,8 @@ module.exports = {
     emptyStarColor : '#cfd8dc',
     emptyLine : '#f1f1f3',
 
+    keepSwipingTextColor : '#48525a',
+
     linkedInButton : '#00649b',
   };
   

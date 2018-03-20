@@ -94,6 +94,11 @@ export default {
     title: 'MATCH PROFILE',
     navigatorStyle: hiddenNavigatorStyle,
   },
+  PROFILE_MATCHED: {
+    screen: 'MPLO.PROFILE_MATCHED',
+    title: 'PROFILE MATCHED',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
 
 
 
