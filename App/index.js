@@ -99,8 +99,8 @@ class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Components.ProfileCard/> */}
-      <SwipeCards
+        <Components.ProfileCard/>
+      {/* <SwipeCards
       cards={this.state.cards}
       renderCard={(cardData) => <Components.ProfileCard />}
       renderNoMoreCards={() => <NoMoreCards />}
@@ -113,7 +113,7 @@ class App extends Component<Props> {
       stackOffsetX={0}
       stackOffsetY = {10}
       containerStyle={{ borderRadius : 35,}}
-    />
+    /> */}
     </View>
     );
   }

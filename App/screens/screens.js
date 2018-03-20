@@ -4,6 +4,10 @@ import Temp from '../index';
 import SplashScreen from './SplashScreen';
 import WelcomeScreen from './WelcomeScreen';
 import CreateProfile from './CreateProfile';
+import MatchProfile from './MatchProfile';
+
+
+
 import EmpRegisterScreen from './Employer/Registeration';
 import EmpProfileScreen from './Employer/Profile';
 
@@ -18,6 +22,9 @@ export function registerScreens() {
     Navigation.registerComponent('MPLO.SPLASH_SCREEN', () => SplashScreen, confStore.store, Provider);
     Navigation.registerComponent('MPLO.WELCOME_SCREEN', () => WelcomeScreen, confStore.store, Provider);
     Navigation.registerComponent('MPLO.CREATE_PROFILE', () => CreateProfile, confStore.store, Provider);
+    Navigation.registerComponent('MPLO.MATCH_PROFILE', () => MatchProfile, confStore.store, Provider);
+
+
     Navigation.registerComponent('MPLO.EMP_REGISTER_SCREEN', () => EmpRegisterScreen, confStore.store, Provider);
     Navigation.registerComponent('MPLO.EMP_PROFILE_SCREEN', () => EmpProfileScreen, confStore.store, Provider);
 

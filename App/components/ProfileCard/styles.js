@@ -11,14 +11,17 @@ const deviceWidth = Dimensions.get('window').width * cardWidth;
 const styles = MediaQueryStyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.blueFbColor,
+    backgroundColor: Colors.white,
     borderRadius : 10,
     height : deviceHeight,
     width : deviceWidth,
   },
   bg:{
     width: deviceWidth,
-    height : deviceHeight * .2,
+    height : deviceHeight * .282,
+    overflow:'hidden',
+    borderTopLeftRadius:10,
+    borderTopRightRadius : 10,
   },
   statInfoContainer:{
     flexDirection:'row',

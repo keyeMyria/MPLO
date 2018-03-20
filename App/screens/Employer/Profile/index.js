@@ -36,7 +36,7 @@ const deviceWidth = Dimensions.get('window').width;
 
 class EmpProfileScreen extends Component {
   
-  experienceStory = 'ent, Teamwork, Leadership, and Project Management.';
+  experienceStory = 'Experienced Sales Associate with a demonstrated history of working in the retail industry. Skilled in Management, Teamwork, Leadership, and Project Management.';
   
   constructor(props){
     super(props);

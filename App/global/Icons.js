@@ -7,8 +7,10 @@ const avatarIcon = require('../assets/icons/avatarIcon.png');
 const plusIcon = require('../assets/icons/plusIcon.png');
 const MPLOLogoHolo = require('../assets/icons/MPLOLogoHolo.png');
 const Star = require('../assets/icons/Star.png');
+const dollarButton = require('../assets/icons/Accept.png');
+const message = require('../assets/icons/Message.png');
 
-const Images = {
+const Icons = {
   cross,
   crossFilled,
   create,
@@ -16,6 +18,8 @@ const Images = {
   plusIcon,
   MPLOLogoHolo,
   Star,
+  dollarButton,
+  message,
 };
 
-export default Images;
+export default Icons;
