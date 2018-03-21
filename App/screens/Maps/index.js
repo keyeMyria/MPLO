@@ -7,15 +7,21 @@
 import React, { Component } from 'react';
 import {
   Platform,
-  StyleSheet,
-  Text, Alert,
-  View, Dimensions
+  StyleSheet,Alert, Image,
+  View, Dimensions, Text, StatusBar,
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import Components from './global/Components';
+import { Container, Header, Left, Body, Right, Button, Icon,
+  Title, Content, Input,Item, Form, Text as NBText
+ } from 'native-base';
 
-import MapView, { Marker, ProviderPropType } from 'react-native-maps';
+import Components from '../../global/Components';
+import styles from './styles';
+
+import MapView, { Marker, Callout, ProviderPropType } from 'react-native-maps';
+import Icons from '../../global/Icons';
+import CustomCallout from './CustomCallout';
 
 const flagBlueImg = {uri:'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/map-marker-icon.png'};
 const flagPinkImg =  {uri:'https://pre00.deviantart.net/a18a/th/pre/f/2015/161/a/e/itunes_13_icon__png__ico__icns__by_loinik-d8wqjzr.png'};
@@ -41,7 +47,7 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 const SPACE = 0.01;
 
 
-class App extends Component<Props> {
+class Maps extends Component<Props> {
 
   
   constructor(props){
@@ -86,10 +92,27 @@ class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Waleed</Text>
+        <StatusBar
+          backgroundColor="transparent"
+          barStyle="dark-content"
+        />
+        <View style={styles.mapBackground}/>
+        <Button info style={styles.menuButton}>
+          <Icon name='menu' style={styles.menuButtonIcon}/>
+        </Button>
+
+        <View style={styles.infoContainer}>
+          <View style={styles.columnContainer}>
+            <Image source={Icons.search} style={styles.searchIcon}/>
+            <View style={styles.infoTextContainer}>
+              <NBText style={styles.locationText}>LOCATION</NBText>
+              <NBText style={styles.address}>994 Colin Gateway Suite 981</NBText>
+            </View>
+          </View>
+        </View>
         <MapView
           provider={this.props.provider}
-          style={{flex:1}}
+          style={styles.mapContainer}
           initialRegion={{
             latitude: LATITUDE,
             longitude: LONGITUDE,
@@ -97,7 +120,7 @@ class App extends Component<Props> {
             longitudeDelta: LONGITUDE_DELTA,
           }}
         >
-        <Marker
+          <Marker
             onPress={() => Alert.alert('Marker 1')}
             coordinate={{
               latitude: LATITUDE + SPACE,
@@ -105,9 +128,13 @@ class App extends Component<Props> {
             }}
             centerOffset={{ x: -18, y: -60 }}
             anchor={{ x: 0.69, y: 1 }}
-            image={{uri:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'}}
+            image={Icons.mapPointer}
           >
-            <Text style={styles.marker}>X</Text>
+            <Callout style={styles.plainView}>
+              <View>
+                <Text>This is a plain view</Text>
+              </View>
+            </Callout>
           </Marker>
           <Marker
             onPress={() => Alert.alert('Marker 2')}
@@ -117,8 +144,11 @@ class App extends Component<Props> {
             }}
             centerOffset={{ x: -18, y: -60 }}
             anchor={{ x: 0.69, y: 1 }}
-            image={{uri:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'}}
+            image={Icons.mapPointer}
+            title="This is a native view"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation" // eslint-disable-line max-len
           />
+
           <Marker
             onPress={() => Alert.alert('Marker 3')}
             coordinate={{
@@ -129,32 +159,27 @@ class App extends Component<Props> {
             anchor={{ x: 0.69, y: 1 }}
             size = {{ x: 100, y : 100 }}
             origin = {{ x: 0, y : 0 }}
-            image={{uri:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'}}
-          />
+            image={Icons.mapPointer}
+          >
+          
+          <Callout tooltip style={styles.customView}>
+              <CustomCallout>
+                <Text>This is a custom callout bubble view</Text>
+              </CustomCallout>
+            </Callout>
+          </Marker>
         </MapView>
-        <Text>Farooqi</Text>
+
+        <Button block style={styles.blockButton}>
+          <Text style={styles.blockButtonText}>MATCH</Text>
+        </Button>
+        <Button block style={styles.cancelButton}>
+          <Text style={styles.cancelButtonText}>CANCEL</Text>
+        </Button>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 const mapStateToProps = state => ({
 });
@@ -162,5 +187,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Maps);
 

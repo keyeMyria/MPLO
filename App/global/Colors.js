@@ -61,5 +61,7 @@ module.exports = {
     keepSwipingTextColor : '#48525a',
 
     linkedInButton : '#00649b',
+    locationTextColor : '#6198fd',
+    locationAddressColor : '#475067',
   };
   

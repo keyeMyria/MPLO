@@ -16,6 +16,7 @@ const board = require('../assets/icons/BoardIcon.png');
 const sun = require('../assets/icons/SunIcon.png');
 const mapPointer = require('../assets/icons/Home-MPLO-slice_11.png');
 const graph = require('../assets/icons/GraphIcon.png');
+const search = require('../assets/icons/Search.png');
 
 
 const Icons = {
@@ -35,6 +36,7 @@ const Icons = {
   sun,
   mapPointer,
   graph,
+  search,
 };
 
 export default Icons;

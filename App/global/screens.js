@@ -99,6 +99,11 @@ export default {
     title: 'PROFILE MATCHED',
     navigatorStyle: hiddenNavigatorStyle,
   },
+  MAPS_SCREEN: {
+    screen: 'MPLO.MAPS_SCREEN',
+    title: 'MAPS SCREEN',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
 
 
 
