@@ -8,6 +8,7 @@ import java.util.List;
 import com.facebook.react.ReactPackage;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
 import com.airbnb.android.react.maps.MapsPackage;
+import net.jodybrewster.linkedinlogin.RNLinkedinLoginPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -23,7 +24,8 @@ public class MainApplication extends NavigationApplication {
          return Arrays.<ReactPackage>asList(
             new SvgPackage(),
             new MPAndroidChartPackage(),
-            new MapsPackage()
+            new MapsPackage(),
+            new RNLinkedinLoginPackage()
          );
      }
 
