@@ -120,7 +120,6 @@ class Maps extends Component<Props> {
           }}
         >
           <Marker
-            onPress={() => Alert.alert('Marker 1')}
             coordinate={{
               latitude: LATITUDE + SPACE,
               longitude: LONGITUDE + SPACE,
@@ -129,14 +128,13 @@ class Maps extends Component<Props> {
             anchor={{ x: 0.69, y: 1 }}
             image={Icons.mapPointer}
           >
-            <Callout style={styles.plainView}>
-              <View>
-                <Text>This is a plain view</Text>
-              </View>
+          <Callout tooltip style={styles.customView} onPress={()=>Alert.alert('a')}>
+              <Components.CustomCallout>
+              </Components.CustomCallout>
             </Callout>
+
           </Marker>
           <Marker
-            onPress={() => Alert.alert('Marker 2')}
             coordinate={{
               latitude: LATITUDE - SPACE,
               longitude: LONGITUDE - SPACE,
@@ -144,12 +142,14 @@ class Maps extends Component<Props> {
             centerOffset={{ x: -18, y: -60 }}
             anchor={{ x: 0.69, y: 1 }}
             image={Icons.mapPointer}
-            title="This is a native view"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation" // eslint-disable-line max-len
-          />
+          >
+          <Callout tooltip style={styles.customView} onPress={()=>Alert.alert('a')}>
+              <Components.CustomCallout>
+              </Components.CustomCallout>
+            </Callout>
+          </Marker>
 
           <Marker
-            onPress={() => Alert.alert('Marker 3')}
             coordinate={{
               latitude: LATITUDE + SPACE,
               longitude: LONGITUDE - SPACE,
@@ -161,9 +161,8 @@ class Maps extends Component<Props> {
             image={Icons.mapPointer}
           >
           
-          <Callout tooltip style={styles.customView}>
+          <Callout tooltip style={styles.customView} onPress={()=>Alert.alert('a')}>
               <Components.CustomCallout>
-                <Text>This is a custom callout bubble view</Text>
               </Components.CustomCallout>
             </Callout>
           </Marker>

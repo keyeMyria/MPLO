@@ -9,8 +9,6 @@ const deviceWidth = Dimensions.get('window').width;
 
 export default styles = MediaQueryStyleSheet.create({
   container: {
-    flexDirection: 'column',
-    alignSelf: 'flex-start',
   },
   bubble: {
 //    width: 140,
@@ -58,14 +56,16 @@ export default styles = MediaQueryStyleSheet.create({
     marginLeft : deviceWidth * .024,
     marginRight : deviceWidth * .01,
     maxWidth : deviceWidth * .56,
+    color : Colors.white,
 //    maxHeight : '95%',
-    backgroundColor:'white',
+    //backgroundColor:'white',
     textAlign:'center',
     fontSize :responsiveFontSize (1.7),
   },
   forwardIcon:{
     fontSize : responsiveFontSize (2.5),
     marginRight : deviceWidth * .01,
+    color : Colors.white,
   },
   amount: {
     flex: 1,
@@ -74,7 +74,7 @@ export default styles = MediaQueryStyleSheet.create({
     backgroundColor: 'transparent',
     borderWidth: 16,
     borderColor: 'transparent',
-    borderTopColor: '#4da2ab',
+    borderTopColor: Colors.appPrimaryRedColor,
     alignSelf: 'center',
     marginTop: -32,
   },

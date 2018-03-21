@@ -17,7 +17,7 @@ registerScreens();
 const navigatorStyle = { navBarHidden: true }
 
 Navigation.startSingleScreenApp({
-  screen:screens.TEMP,
+  screen:screens.MAPS_SCREEN,
   drawer: {
     // optional, add this if you want a side menu drawer in your app
     left: {

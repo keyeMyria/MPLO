@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  StyleSheet, Dimensions,
+  StyleSheet, Dimensions, TouchableOpacity, Alert,
   View, Text as RNText
 } from 'react-native';
 
@@ -24,12 +24,8 @@ maxHeight =  deviceHeight * .055;
 
 const CustomCallout = (props) => {
 
-  function updateSize(height){
-    maxHeight = height;
-  }
-
     return (
-      <View style={styles.container}>
+      <TouchableOpacity onPress={()=>Alert.alert('a')}>
         <View style={styles.bubble}>
           <View style={styles.columnContainer}>
             <View style={styles.distStatContainer}>
@@ -38,18 +34,24 @@ const CustomCallout = (props) => {
             </View>
             <Text style={styles.title}
              multiline={true} adjustsFontSizeToFit={true}>
-             Berkshire Insurance Group Berkshire Insurance Group
-             Berkshire Insurance Group   Berkshire Insurance Group </Text>
+             Berkshire Insurance Group </Text>
             <Icon name='md-arrow-forward' style={styles.forwardIcon}></Icon>
           </View>
         </View>
         <View style={styles.arrowBorder} />
         <View style={styles.arrow} />
-      </View>
+      </TouchableOpacity>
     );
 
 }
 
-CustomCallout.propTypes = propTypes;
+
+CustomCallout.propTypes = {
+  onPress : PropTypes.func,
+};
+  
+CustomCallout.defaultProps = {
+  onPress : () => console.log('a'),
+}
 
 export default CustomCallout;
