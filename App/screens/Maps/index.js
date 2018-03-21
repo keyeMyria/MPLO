@@ -21,7 +21,6 @@ import styles from './styles';
 
 import MapView, { Marker, Callout, ProviderPropType } from 'react-native-maps';
 import Icons from '../../global/Icons';
-import CustomCallout from './CustomCallout';
 
 const flagBlueImg = {uri:'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/map-marker-icon.png'};
 const flagPinkImg =  {uri:'https://pre00.deviantart.net/a18a/th/pre/f/2015/161/a/e/itunes_13_icon__png__ico__icns__by_loinik-d8wqjzr.png'};
@@ -163,9 +162,9 @@ class Maps extends Component<Props> {
           >
           
           <Callout tooltip style={styles.customView}>
-              <CustomCallout>
+              <Components.CustomCallout>
                 <Text>This is a custom callout bubble view</Text>
-              </CustomCallout>
+              </Components.CustomCallout>
             </Callout>
           </Marker>
         </MapView>

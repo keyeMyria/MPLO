@@ -43,77 +43,16 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 const SPACE = 0.01;
 
  
-class Card extends React.Component {
-  constructor(props) {
-    super(props);
-  }
- 
-  render() {
-    return (
-      <View style={[styles.card, {backgroundColor: this.props.backgroundColor}]}>
-        <Text>{this.props.text}</Text>
-      </View>
-    )
-  }
-}
- 
-class NoMoreCards extends Component {
-  constructor(props) {
-    super(props);
-  }
- 
-  render() {
-    return (
-      <View>
-        <Text style={styles.noMoreCardsText}>No more cards</Text>
-      </View>
-    )
-  }
-}
-
 class App extends Component<Props> {
 
   
   constructor(props){
     super(props);
-    this.state = { 
-      cards: [
-        {text: 'Tomato', backgroundColor: 'red'},
-        {text: 'Aubergine', backgroundColor: 'purple'},
-        {text: 'Courgette', backgroundColor: 'green'},
-        {text: 'Blueberry', backgroundColor: 'blue'},
-        {text: 'Umm...', backgroundColor: 'cyan'},
-        {text: 'orange', backgroundColor: 'orange'},
-      ]
-    };
-  }
-  handleYup (card) {
-    Alert.alert(`Yup for ${card.text}`)
-  }
-  handleNope (card) {
-    Alert.alert(`Nope for ${card.text}`)
-  }
-  handleMaybe (card) {
-    Alert.alert(`Maybe for ${card.text}`)
   }
   render() {
     return (
       <View style={styles.container}>
-        <Components.ProfileCard/>
-      {/* <SwipeCards
-      cards={this.state.cards}
-      renderCard={(cardData) => <Components.ProfileCard />}
-      renderNoMoreCards={() => <NoMoreCards />}
-
-      handleYup={this.handleYup}
-      handleNope={this.handleNope}
-      handleMaybe={this.handleMaybe}
-      showYup = {false} showNope = {false}
-      stack={true}
-      stackOffsetX={0}
-      stackOffsetY = {10}
-      containerStyle={{ borderRadius : 35,}}
-    /> */}
+        <Components.CustomCallout/>
     </View>
     );
   }
