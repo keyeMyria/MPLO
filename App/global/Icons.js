@@ -9,6 +9,14 @@ const MPLOLogoHolo = require('../assets/icons/MPLOLogoHolo.png');
 const Star = require('../assets/icons/Star.png');
 const dollarButton = require('../assets/icons/Accept.png');
 const message = require('../assets/icons/Message.png');
+const meter = require('../assets/icons/MeterIcon.png');
+const fourOptions = require('../assets/icons/FourOptionIcon.png');
+const files = require('../assets/icons/FilesIcon.png');
+const board = require('../assets/icons/BoardIcon.png');
+const sun = require('../assets/icons/SunIcon.png');
+const mapPointer = require('../assets/icons/Home-MPLO-slice_11.png');
+const graph = require('../assets/icons/GraphIcon.png');
+
 
 const Icons = {
   cross,
@@ -20,6 +28,13 @@ const Icons = {
   Star,
   dollarButton,
   message,
+  meter,
+  fourOptions,
+  files,
+  board,
+  sun,
+  mapPointer,
+  graph,
 };
 
 export default Icons;

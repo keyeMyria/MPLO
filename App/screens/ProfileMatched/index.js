@@ -55,6 +55,12 @@ class ProfileMatched extends Component {
 //    setTimeout(() => {this.navigateToNextScreen()}, 200)
   }
 
+  onSwipePress(){
+    this.props.navigator.toggleDrawer({
+      side: 'left'
+    });
+  }
+
   render() {
        
     return(
@@ -79,7 +85,7 @@ class ProfileMatched extends Component {
           <Button style={styles.continueButton} block>
             <Text style={styles.continueText}>Continue</Text>
           </Button>
-          <Button style={styles.keepButton} block>
+          <Button style={styles.keepButton} block onPress={()=>this.onSwipePress()}>
             <Text style={styles.keepText}>Keep Swiping</Text>
           </Button>
         </View>
