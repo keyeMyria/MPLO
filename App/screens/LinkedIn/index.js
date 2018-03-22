@@ -1,5 +1,5 @@
 /**
- * Sample React Native App
+ * Sample React Native LinkedIn
  * https://github.com/facebook/react-native
  * @flow
  */
@@ -21,7 +21,7 @@ import LinkedinLogin from 'react-native-linkedin-login';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
-class App extends Component<Props> {
+class LinkedIn extends Component<Props> {
 
   
   constructor(props) {
@@ -193,5 +193,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(LinkedIn);
 
