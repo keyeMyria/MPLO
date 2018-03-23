@@ -28,7 +28,7 @@ const deviceWidth = Dimensions.get('window').width;
 
 const navigatorStyle = { navBarHidden: true };
 
-class EmpRegisterScreen extends Component {
+class UserRegisterScreen extends Component {
   
   welomeMessageString = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
   about = 'Arkotech has been in business since 2001 and has been serving clients both on the East Coast and West Coast of U.S. since then it has maintained a perfect rating and client relationship throughout.';
@@ -41,12 +41,6 @@ class EmpRegisterScreen extends Component {
     };
   }
 
-  onSwipePress(){
-    this.props.navigator.toggleDrawer({
-      side: 'left'
-    });
-  }
-
   componentDidMount() {
 //    setTimeout(() => {this.navigateToNextScreen()}, 200)
   }
@@ -56,7 +50,7 @@ class EmpRegisterScreen extends Component {
     {
       this.props.navigator.push({
         screen: name,
-        navigatorStyle 
+        navigatorStyle,
       });
     }
   }
@@ -100,13 +94,13 @@ class EmpRegisterScreen extends Component {
         {this.getAvatar()}
 
         <Form style={styles.formStyle}>
-          <Text style={styles.labelTextStyle}>Company Name</Text>
+          <Text style={styles.labelTextStyle}>Name</Text>
           <TextInput underlineColorAndroid="transparent" maxLength={30} style={styles.inputTextStyle}/>
           
           <Text style={styles.labelTextStyle}>Location</Text>
           <TextInput underlineColorAndroid="transparent" maxLength={25} style={styles.inputTextStyle}/>
 
-          <Text style={styles.labelTextStyle}>Tax ID</Text>
+          <Text style={styles.labelTextStyle}>Nature of Work</Text>
           <TextInput underlineColorAndroid="transparent" style={styles.inputTextStyle}/>
           
           <Text style={styles.labelTextStyle}>About</Text>
@@ -150,4 +144,4 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EmpRegisterScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(UserRegisterScreen);

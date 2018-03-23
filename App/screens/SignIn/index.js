@@ -5,7 +5,7 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
-  Image,
+  Image, TextInput,
   Dimensions, Alert,
   AsyncStorage, ActivityIndicator, 
 } from 'react-native';
@@ -25,7 +25,7 @@ const deviceWidth = Dimensions.get('window').width;
 
 const navigatorStyle = { navBarHidden: true };
 
-class WelcomeScreen extends Component {
+class SignIn extends Component {
   
   welomeMessageString = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
@@ -64,16 +64,21 @@ class WelcomeScreen extends Component {
         <Image source = {Images.logoMPLO} style={styles.logo}></Image>
         <View style={styles.bottomContainer}>
           <View style={styles.textContainer}>
-            <Text style={styles.heading}>Welcome To MPLO</Text>
-            <Text style={styles.welcomeMessage}>{this.welomeMessageString}</Text>
+            <Text style={styles.heading}>SIGN IN</Text>
           </View>
 
-          <Button block style={styles.hireMeButton} onPress={()=>this.navigateToNextScreen('MPLO.USER_CREATE_PROFILE')}>
-            <Text>Hire Me</Text>
+      <View style={styles.form}>
+          <Item>
+              <Input placeholder="Email" />
+            </Item>
+            <Item>
+              <Input placeholder="Password" />
+            </Item>
+            </View>
+          <Button block style={styles.hireMeButton} onPress={()=>this.navigateToNextScreen('MPLO.EMP_PROFILE_SCREEN')}>
+            <Text>LOGIN</Text>
           </Button>
-          <Button block style={styles.hiringMeButton} onPress={()=>this.navigateToNextScreen('MPLO.EMP_CREATE_PROFILE')}>
-            <Text style={styles.hiringMeButtonText} >I’m Hiring</Text>
-          </Button>
+
         </View>
 
 
@@ -89,4 +94,4 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(WelcomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

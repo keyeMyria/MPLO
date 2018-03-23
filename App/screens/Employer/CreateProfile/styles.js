@@ -1,5 +1,5 @@
 import { MediaQueryStyleSheet } from 'react-native-responsive';
-import Colors from '../../global/Colors';
+import Colors from '../../../global/Colors';
 import { Dimensions, Platform } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;

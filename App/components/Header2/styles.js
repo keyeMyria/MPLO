@@ -11,8 +11,8 @@ const styles = MediaQueryStyleSheet.create({
     height : deviceHeight * .0278,
     marginLeft : deviceWidth * 0.066,
     flexDirection:'row',
-    flex:1,
     alignItems:'flex-start',
+    marginBottom:deviceHeight * .005,
 //      backgroundColor:'red',
   },
   crossButton:{

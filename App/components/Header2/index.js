@@ -27,7 +27,7 @@ import screens from '../../global/screens';
 const Header2 = (props) => {
   return (
     <View style={styles.headerContainer}>
-      <TouchableOpacity style={styles.crossButton} onPress={() => Alert.alert('puff')}>
+      <TouchableOpacity style={styles.crossButton} onPress={props.onPress}>
         <Image source={Icons.cross} style={styles.crossIcon}></Image>
       </TouchableOpacity>
       <Text style={styles.HeaderTitle}>{props.title}</Text>

@@ -12,6 +12,7 @@ const styles = MediaQueryStyleSheet.create({
     marginRight:deviceWidth * .049,
     flexDirection:'row',
     alignItems:'center',
+    marginBottom:deviceHeight * .005,
   //  backgroundColor:'red',
   },
   title:{

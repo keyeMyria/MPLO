@@ -17,17 +17,8 @@ registerScreens();
 const navigatorStyle = { navBarHidden: true }
 
 Navigation.startSingleScreenApp({
-  screen:screens.TEMP,
-  drawer: {
-    // optional, add this if you want a side menu drawer in your app
-    left: {
-      // optional, define if you want a drawer from the left
-      screen: 'MPLO.LEFT_DRAWER_MENU', // unique ID registered with Navigation.registerScreen
-      passProps: {}, // simple serializable object that will pass as props to all top screens (optional)
-      disableOpenGesture: false, // can the drawer be opened with a swipe instead of button (optional, Android only)
-      fixedWidth: deviceWidth * 0.828, // a fixed width you want your left drawer to have (optional)
-    },
-  }
+  screen:screens.SPLASH_SCREEN,
+  drawer: screens.DRAWER
   }
 );
 
@@ -50,6 +41,24 @@ export function callNavigationTabApp(){
     tabsStyle, appStyle,
   });
 
+}
+
+export function navigateToNextScreen(name){
+  if (name !== null)
+  {
+    this.props.navigator.push({
+      screen: name,
+      navigatorStyle
+    });
+  }
+}
+
+export function openDrawer(){
+  this.props.navigator.toggleDrawer({
+    side: 'left',// the side of the drawer since you can have two, 'left' / 'right'
+    animated: true, // does the toggle have transition animation or does it happen immediately (optional)
+    to: 'open',
+  });
 }
 
 export function callSingleScreen(screenName){

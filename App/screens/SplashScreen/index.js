@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
  
 });
 
+const navigatorStyle = { navBarHidden: true };
+
+
 class SplashScreen extends Component {
   
   constructor(props){
@@ -45,21 +48,17 @@ class SplashScreen extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {this.navigateToNextScreen()}, 200)
+    setTimeout(() => {this.navigateToNextScreen('MPLO.WELCOME_SCREEN')}, 1000)
   }
-
-  navigateToNextScreen(){
-    callSingleScreen(screens.WELCOME_SCREEN);
-
-    // if (typeof this.props.userLogin.auth_token !== 'undefined' && this.props.userLogin.auth_token !== null)
-    // {
-    //   callNavigationTabApp();
-    // }
-
-    // else
-    // {
-    //   callLoginScreen();
-    // }
+  
+  navigateToNextScreen(name){
+    if (name !== null)
+    {
+      this.props.navigator.push({
+        screen: name,
+        navigatorStyle
+      });
+    }
   }
 
   render() {

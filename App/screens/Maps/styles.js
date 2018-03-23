@@ -27,6 +27,7 @@ const styles = MediaQueryStyleSheet.create({
     borderWidth:0,
 
     position : 'absolute',
+    zIndex:1,
     top : Platform.OS === 'ios' ? deviceHeight * .032 : (deviceHeight * .032),
     left : deviceWidth * .038,
   },

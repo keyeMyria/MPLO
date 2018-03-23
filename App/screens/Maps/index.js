@@ -22,6 +22,9 @@ import styles from './styles';
 import MapView, { Marker, Callout, ProviderPropType } from 'react-native-maps';
 import Icons from '../../global/Icons';
 
+import { navigateToNextScreen, openDrawer } from '../../../App';
+
+
 const flagBlueImg = {uri:'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/map-marker-icon.png'};
 const flagPinkImg =  {uri:'https://pre00.deviantart.net/a18a/th/pre/f/2015/161/a/e/itunes_13_icon__png__ico__icns__by_loinik-d8wqjzr.png'};
 
@@ -88,6 +91,8 @@ class Maps extends Component<Props> {
     this.setState({ region : _region });
   }
   
+
+
   render() {
     return (
       <View style={styles.container}>
@@ -96,7 +101,7 @@ class Maps extends Component<Props> {
           barStyle="dark-content"
         />
         <View style={styles.mapBackground}/>
-        <Button info style={styles.menuButton}>
+        <Button info style={styles.menuButton} onPress={openDrawer.bind(this)}>
           <Icon name='menu' style={styles.menuButtonIcon}/>
         </Button>
 
@@ -128,7 +133,7 @@ class Maps extends Component<Props> {
             anchor={{ x: 0.69, y: 1 }}
             image={Icons.mapPointer}
           >
-          <Callout tooltip style={styles.customView} onPress={()=>Alert.alert('a')}>
+          <Callout tooltip style={styles.customView}>
               <Components.CustomCallout>
               </Components.CustomCallout>
             </Callout>
@@ -143,7 +148,7 @@ class Maps extends Component<Props> {
             anchor={{ x: 0.69, y: 1 }}
             image={Icons.mapPointer}
           >
-          <Callout tooltip style={styles.customView} onPress={()=>Alert.alert('a')}>
+          <Callout tooltip style={styles.customView}>
               <Components.CustomCallout>
               </Components.CustomCallout>
             </Callout>
@@ -161,17 +166,17 @@ class Maps extends Component<Props> {
             image={Icons.mapPointer}
           >
           
-          <Callout tooltip style={styles.customView} onPress={()=>Alert.alert('a')}>
+          <Callout tooltip style={styles.customView} onPress={()=>console.log('a')}>
               <Components.CustomCallout>
               </Components.CustomCallout>
             </Callout>
           </Marker>
         </MapView>
 
-        <Button block style={styles.blockButton}>
+        <Button block style={styles.blockButton} onPress={navigateToNextScreen.bind(this,'MPLO.MATCH_PROFILE')}>
           <Text style={styles.blockButtonText}>MATCH</Text>
         </Button>
-        <Button block style={styles.cancelButton}>
+        <Button block style={styles.cancelButton} onPress={()=> this.props.navigator.pop()}>
           <Text style={styles.cancelButtonText}>CANCEL</Text>
         </Button>
       </View>

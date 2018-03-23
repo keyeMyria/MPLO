@@ -8,6 +8,8 @@ import { Image } from 'react-native';
 
 import { StyleSheet, Dimensions } from 'react-native';
 
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
 
@@ -72,6 +74,15 @@ export default {
     navigatorStyle: hiddenNavigatorStyle,
     navBarButtonColor: 'blue',
   },
+
+  SIGNIN_SCREEN: {
+    screen: 'MPLO.SIGNIN_SCREEN',
+    title: 'SPLASH',
+//    icon: Icons.Download_icon,
+    navigatorStyle: hiddenNavigatorStyle,
+  },
+  
+
   SPLASH_SCREEN: {
     screen: 'MPLO.SPLASH_SCREEN',
     title: 'SPLASH',
@@ -83,9 +94,9 @@ export default {
     title: 'WELCOME',
     navigatorStyle: hiddenNavigatorStyle,
   },
-  CREATE_PROFILE: {
-    screen: 'MPLO.CREATE_PROFILE',
-    title: 'CREATE PROFILE',
+  EMP_CREATE_PROFILE: {
+    screen: 'MPLO.EMP_CREATE_PROFILE',
+    title: 'EMPLOYER CREATE PROFILE',
     navigatorStyle: hiddenNavigatorStyle,
   },
 
@@ -103,6 +114,22 @@ export default {
     screen: 'MPLO.MAPS_SCREEN',
     title: 'MAPS SCREEN',
     navigatorStyle: hiddenNavigatorStyle,
+
+
+
+
+  USER_CREATE_PROFILE: {
+    screen: 'MPLO.USER_CREATE_PROFILE',
+    title: 'USER CREATE PROFILE',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
+  USER_REGISTER_SCREEN: {
+    screen: 'MPLO.USER_REGISTER_SCREEN',
+    title: 'USER REGISTER PROFILE',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
+
+
   },
 
 
@@ -120,5 +147,14 @@ export default {
     navigatorStyle: hiddenNavigatorStyle,
   },
   
-  
+  DRAWER:{
+    // optional, add this if you want a side menu drawer in your app
+    left: {
+      // optional, define if you want a drawer from the left
+      screen: 'MPLO.LEFT_DRAWER_MENU', // unique ID registered with Navigation.registerScreen
+      passProps: {}, // simple serializable object that will pass as props to all top screens (optional)
+      disableOpenGesture: false, // can the drawer be opened with a swipe instead of button (optional, Android only)
+      fixedWidth: deviceWidth * 0.828, // a fixed width you want your left drawer to have (optional)
+    },
+  }
 };

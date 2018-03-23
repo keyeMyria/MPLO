@@ -27,12 +27,13 @@ import StarRating from 'react-native-star-rating';
 import { StackedBarChart } from 'react-native-svg-charts'
 import {BarChart} from 'react-native-charts-wrapper';
 
-
+import { navigateToNextScreen } from '../../../../App';
 
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
+const navigatorStyle = { navBarHidden: true };
 
 class EmpProfileScreen extends Component {
   
@@ -79,19 +80,6 @@ class EmpProfileScreen extends Component {
 //    setTimeout(() => {this.navigateToNextScreen()}, 200)
   }
 
-  navigateToNextScreen(){
-//      callSingleScreen(screens.WELCOME_SCREEN);
-    // if (typeof this.props.userLogin.auth_token !== 'undefined' && this.props.userLogin.auth_token !== null)
-    // {
-    //   callNavigationTabApp();
-    // }
-
-    // else
-    // {
-    //   callLoginScreen();
-    // }
-  }
-
   getAvatar(){
     if (this.state.hasAvatarLoaded === true)
     {
@@ -136,6 +124,14 @@ class EmpProfileScreen extends Component {
     
   }
 
+  openDrawer(){
+    this.props.navigator.toggleDrawer({
+      side: 'left',// the side of the drawer since you can have two, 'left' / 'right'
+      animated: true, // does the toggle have transition animation or does it happen immediately (optional)
+      to: 'open',
+    });
+  }
+
   render() {
        
     return(
@@ -145,8 +141,9 @@ class EmpProfileScreen extends Component {
           barStyle="dark-content"
         />
         <Components.StatusBar/>
-        <Components.MainHeader title="ALENJANDO MARTINEZ"/>
+        <Components.MainHeader title="ALENJANDO MARTINEZ" onMenuPress={this.openDrawer.bind(this)}/>
 
+        <TouchableOpacity onPress={ navigateToNextScreen.bind(this,'MPLO.MAPS_SCREEN')}>
         <Image style={styles.bg} source={Images.Bg3}/>
         <View style={styles.bottomContainer}>
           <View style={styles.statInfoContainer}>
@@ -211,7 +208,7 @@ class EmpProfileScreen extends Component {
             </View>
           </View>
         </View>
-
+        </TouchableOpacity>
       </View>
     )
   }

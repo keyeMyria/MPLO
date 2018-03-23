@@ -9,6 +9,7 @@ const styles = MediaQueryStyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: Colors.white,
+      zIndex:5,
     },
     backgroundImage:{
       flex:1,
@@ -30,7 +31,8 @@ const styles = MediaQueryStyleSheet.create({
     },
     name:{
       color : Colors.appPrimaryRedColor,
-      fontSize: 18,
+      fontSize: 16,
+      fontFamily : 'Roboto-Medium',
     },
     id:{
       color : Colors.white,

@@ -29,7 +29,7 @@ import {BarChart} from 'react-native-charts-wrapper';
 
 import SwipeCards from 'react-native-swipe-cards';
 
-
+import { openDrawer } from '../../../App';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -80,7 +80,7 @@ class MatchProfile extends Component {
           barStyle="light-content"
         />
         <Components.StatusBar/>
-        <Components.MainHeader isDarkTheme = {true}/>
+        <Components.MainHeader isDarkTheme = {true} onMenuPress={openDrawer.bind(this)} />
 
         <View style={styles.swipeCardContainer}>
           <SwipeCards
@@ -88,9 +88,6 @@ class MatchProfile extends Component {
           renderCard={(cardData) => <Components.ProfileCard />}
           renderNoMoreCards={() => <NoMoreCards />}
 
-          handleYup={this.handleYup}
-          handleNope={this.handleNope}
-          handleMaybe={this.handleMaybe}
           showYup = {false} showNope = {false}
           stack={true}
           stackOffsetX={0}
@@ -99,7 +96,9 @@ class MatchProfile extends Component {
         </View>
 
         <View style={styles.bottomContainer}>
-          <Image source={Icons.crossFilled} style={styles.buttonIcon}/>
+          <TouchableOpacity onPress={()=> this.props.navigator.pop()}>
+            <Image source={Icons.crossFilled} style={styles.buttonIcon}/>
+          </TouchableOpacity>
           <Image source={Icons.message} style={styles.messageButtonIcon}/>
           <Image source={Icons.dollarButton} style={styles.buttonIcon}/>
         </View>
