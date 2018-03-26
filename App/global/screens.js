@@ -121,6 +121,11 @@ export default {
     navigatorStyle: hiddenNavigatorStyle,
   },
 
+  JOB_BOARD: {
+    screen: 'MPLO.JOB_BOARD',
+    title: 'JOB BOARD SCREEN',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
   
 
   

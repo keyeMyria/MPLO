@@ -4,6 +4,7 @@ import Header2 from '../components/Header2';
 import BarGraph from '../components/BarGraph';
 import ProfileCard from '../components/ProfileCard';
 import CustomCallout from '../components/CustomCallout';
+import JobListItem from '../components/JobListItem';
 
 const Components = {
   MainHeader,
@@ -12,6 +13,7 @@ const Components = {
   BarGraph,
   ProfileCard,
   CustomCallout,
+  JobListItem,
 };
 
 export default Components;

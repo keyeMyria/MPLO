@@ -10,9 +10,9 @@ const styles = MediaQueryStyleSheet.create({
   container:{
   },
   contentContainer:{
-    backgroundColor:'pink',
     marginTop : deviceHeight * .046,
     alignItems:'center',
+    paddingBottom:20,
   },
   optionButtonContainer:{
     width : deviceWidth * .498,
@@ -38,7 +38,7 @@ const styles = MediaQueryStyleSheet.create({
     textAlign:'center',
     width : deviceWidth * .358,
     marginTop:deviceHeight * .02,
-    color : Global.Colors.mapDescriptionText,
+    color : Global.Colors.optDescriptionText,
   },
   optInnerButton:{
     width : deviceWidth * .185,
@@ -46,13 +46,15 @@ const styles = MediaQueryStyleSheet.create({
     backgroundColor:Global.Colors.appPrimaryRedColor,
     marginTop : deviceHeight * .042,
     marginLeft : deviceWidth * .15,
+    elevation : 0,
   },
   optInnerButtonText:{
-    height : deviceHeight * .039, 
+    height : deviceHeight * .0195,  
     width : deviceWidth * .185,
     fontSize : responsiveFontSize(1.2),
     textAlign : 'center',
-    marginTop : deviceHeight * .0135,
+    color : Global.Colors.white,
+    fontFamily:'Roboto-Medium',
   },
 
   optionButtonContainer2:{
@@ -61,7 +63,7 @@ const styles = MediaQueryStyleSheet.create({
     alignItems:'center',
     backgroundColor:Global.Colors.white,
     marginTop : deviceHeight * .0656,
-    
+    elevation:2,
   }, 
   optButtonIcon2:{
     width : deviceWidth * .1489,
@@ -78,22 +80,29 @@ const styles = MediaQueryStyleSheet.create({
     fontSize : responsiveFontSize(1.1),
     textAlign:'center',
     width : deviceWidth * .358,
-    backgroundColor:'red',
+//    backgroundColor:'red',
     marginTop:deviceHeight * .0326,
+    color : Global.Colors.optDescriptionText,
   },
   optInnerButton2:{
     width : deviceWidth * .185,
     height : deviceHeight * .039,
-    backgroundColor:Global.Colors.appPrimaryRedColor,
+    backgroundColor:Global.Colors.transparent,
+    borderColor : Global.Colors.appPrimaryDarkColor,
+    borderWidth : 1,
     marginTop : deviceHeight * .042,
     marginLeft : deviceWidth * .15,
+    elevation : 0,
+    alignItems:'center',
+    justifyContent : 'center',
   },
   optInnerButtonText2:{
-    height : deviceHeight * .039, 
+    height : deviceHeight * .0195, 
     width : deviceWidth * .185,
     fontSize : responsiveFontSize(1.2),
     textAlign : 'center',
-    marginTop : deviceHeight * .0135,
+    color : Global.Colors.optButtonText,
+    fontFamily:'Roboto-Medium',
   },
 
 });

@@ -64,6 +64,11 @@ module.exports = {
     locationTextColor : '#6198fd',
     locationAddressColor : '#475067',
     mapViewColor : '#0081ff',
-    mapDescriptionText : '#7c7c7c',
+    optDescriptionText : '#7c7c7c',
+    optButtonText : '#49535a',
+    jobDescription : '#7f95a0',
+    jobItemLocation:'#007ee5',
+
+
   };
   

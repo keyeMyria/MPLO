@@ -1,0 +1,67 @@
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity, TouchableHighlight,
+  Image, StatusBar, processColor,
+  Dimensions, Alert, TextInput,
+  AsyncStorage, ActivityIndicator, 
+} from 'react-native';
+
+import { Container, Header, Left, Body, Label, Right, Button, Icon,
+  Title, Content, Input,Item, Form, Textarea,
+  Text } from 'native-base';
+import PropTypes from 'prop-types';
+
+//import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './styles';
+
+import Components from '../../global/Components';
+import Images from '../../global/Images';
+import Icons from '../../global/Icons';
+
+import Colors from '../../global/Colors';
+
+import StarRating from 'react-native-star-rating';
+import { StackedBarChart } from 'react-native-svg-charts'
+import {BarChart} from 'react-native-charts-wrapper';
+
+
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
+
+
+
+const JobListItem = (props) => {
+  
+  experienceStory = 'We are looking for services of a Graphic Designer Experienced candidates are encouraged to apply.';
+
+  return(
+    <View style = {styles.container}>
+      <View style={styles.innerContainer1}>
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>Creative Chaos LTD</Text>
+          <Text style={styles.jobDescription}>{this.experienceStory}</Text>
+        </View>
+      </View>
+      <View style={styles.innerContainer2}>
+        <View style={styles.colContainer}>
+          <Text style={styles.locationText}>Creative Chaos LTD</Text>
+        </View>
+      </View>
+    </View>
+  )
+}
+
+JobListItem.propTypes = {
+  hasAvatarLoaded : PropTypes.bool,
+  starCount : PropTypes.number,
+};
+  
+JobListItem.defaultProps = {
+  hasAvatarLoaded : true,
+  starCount : 3,
+}
+export default JobListItem;
