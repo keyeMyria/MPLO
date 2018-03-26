@@ -10,6 +10,7 @@ import MatchProfile from './MatchProfile';
 import ProfileMatched from './ProfileMatched';
 import LeftMenuDrawer from './LeftMenuDrawer';
 import Maps from './Maps';
+import ViewsOptionsScreen from './ViewsOptionsScreen';
 
 
 import EmpCreateProfile from './Employer/CreateProfile';
@@ -37,6 +38,7 @@ export function registerScreens() {
     Navigation.registerComponent('MPLO.PROFILE_MATCHED', () => ProfileMatched, confStore.store, Provider);
     Navigation.registerComponent('MPLO.LEFT_DRAWER_MENU', () => LeftMenuDrawer, confStore.store, Provider);
     Navigation.registerComponent('MPLO.MAPS_SCREEN', () => Maps, confStore.store, Provider);
+    Navigation.registerComponent('MPLO.VIEWS_OPTIONS_SCREEN', () => ViewsOptionsScreen, confStore.store, Provider);
 
     Navigation.registerComponent('MPLO.EMP_CREATE_PROFILE', () => EmpCreateProfile, confStore.store, Provider);    
     Navigation.registerComponent('MPLO.EMP_REGISTER_SCREEN', () => EmpRegisterScreen, confStore.store, Provider);

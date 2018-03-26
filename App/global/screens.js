@@ -114,6 +114,16 @@ export default {
     screen: 'MPLO.MAPS_SCREEN',
     title: 'MAPS SCREEN',
     navigatorStyle: hiddenNavigatorStyle,
+  },
+  VIEWS_OPTIONS_SCREEN: {
+    screen: 'MPLO.VIEWS_OPTIONS_SCREEN',
+    title: 'VIEWS OPTION SCREEN',
+    navigatorStyle: hiddenNavigatorStyle,
+  },
+
+  
+
+  
 
 
 
@@ -128,10 +138,6 @@ export default {
     title: 'USER REGISTER PROFILE',
     navigatorStyle: hiddenNavigatorStyle,
   },
-
-
-  },
-
 
 
   

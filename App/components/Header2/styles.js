@@ -13,7 +13,7 @@ const styles = MediaQueryStyleSheet.create({
     flexDirection:'row',
     alignItems:'flex-start',
     marginBottom:deviceHeight * .005,
-//      backgroundColor:'red',
+    marginBottom : deviceHeight * .02, // Note this number
   },
   crossButton:{
     zIndex : 1,

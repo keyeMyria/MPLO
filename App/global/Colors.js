@@ -63,5 +63,7 @@ module.exports = {
     linkedInButton : '#00649b',
     locationTextColor : '#6198fd',
     locationAddressColor : '#475067',
+    mapViewColor : '#0081ff',
+    mapDescriptionText : '#7c7c7c',
   };
   
