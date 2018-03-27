@@ -32,11 +32,11 @@ import {BarChart} from 'react-native-charts-wrapper';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
-
-
 const JobListItem = (props) => {
   
   experienceStory = 'We are looking for services of a Graphic Designer Experienced candidates are encouraged to apply.';
+  path = 'Location: Sabina Park,New York City';
+  rate = '$2000 - $2500';
 
   return(
     <View style = {styles.container}>
@@ -48,7 +48,8 @@ const JobListItem = (props) => {
       </View>
       <View style={styles.innerContainer2}>
         <View style={styles.colContainer}>
-          <Text style={styles.locationText}>Creative Chaos LTD</Text>
+          <Text style={styles.locationText}>{this.path}</Text>
+          <Text style={styles.rateText}>{this.rate}</Text>
         </View>
       </View>
     </View>

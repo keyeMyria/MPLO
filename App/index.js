@@ -35,7 +35,7 @@ class App extends Component<Props> {
 
   render() {
    return(
-     <View>
+     <View style={styles.container}>
        <Global.Components.JobListItem/>
      </View>
    ) 

@@ -10,13 +10,22 @@ const styles = MediaQueryStyleSheet.create({
   container : {
     width : deviceWidth * .912,
     marginLeft : deviceWidth * .045,
+    marginRight : deviceWidth * .043,
     borderRadius : 5,
-    elevation:1,
+    borderTopLeftRadius : 5,
+    borderTopRightRadius: 5,
+    //borderWidth : 1,
+    // shadowOffset:{ height: 20,  },
+     elevation:3,
+    marginTop : 20,
+    backgroundColor:Colors.white,
   },
   innerContainer1:{
     height : deviceHeight * .141,
-//    backgroundColor:Colors.pink,
-    elevation:10,
+    backgroundColor:Colors.white,
+    borderRadius:5,
+    elevation:4,
+//    shadowOffset:{ height: 20,  },
   },
   textContainer:{
     marginTop : deviceHeight * .0267,
@@ -33,19 +42,30 @@ const styles = MediaQueryStyleSheet.create({
     color : Colors.jobDescription,
     fontFamily : 'Roboto-Medium',
     marginTop : deviceHeight * .028,
+    marginBottom : deviceHeight * .019,
   },
   innerContainer2:{
     height : deviceHeight * .0582,
-    marginTop : deviceHeight * .0267,
+//    marginTop : deviceHeight * .0267,
     marginLeft : deviceWidth * .031,
     justifyContent:'center',
-
+    marginRight : deviceWidth * .054,
   },
   colContainer:{
     flexDirection : 'row',
+    alignItems : 'flex-end',
+    justifyContent : 'space-between',
   },
   locationText:{
     color : Colors.jobItemLocation,
+    fontFamily : 'Roboto-Medium',
+    fontSize : responsiveFontSize(1.44),
+    letterSpacing : .6,
+  },
+  rateText:{
+    //fontFamily : 'ProximaNova-Semibold',
+    fontSize : responsiveFontSize(1.49),
+    //color : Colors.appHeaderDarkColor,
   },
 
 
