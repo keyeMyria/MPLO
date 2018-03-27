@@ -17,6 +17,8 @@ import JobBoard from './JobBoard';
 import EmpCreateProfile from './Employer/CreateProfile';
 import EmpRegisterScreen from './Employer/Registeration';
 import EmpProfileScreen from './Employer/Profile';
+//import EmpProfileScreen from './Employer/Profile';
+
 
 
 import UserCreateProfile from './User/CreateProfile';

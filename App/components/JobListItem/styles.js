@@ -27,6 +27,11 @@ const styles = MediaQueryStyleSheet.create({
     elevation:4,
 //    shadowOffset:{ height: 20,  },
   },
+  headerContainer:{
+    flexDirection : 'row', 
+    justifyContent:'space-between',
+    alignItems:'center',
+  },
   textContainer:{
     marginTop : deviceHeight * .0267,
     marginLeft : deviceWidth * .049,
@@ -36,6 +41,12 @@ const styles = MediaQueryStyleSheet.create({
   title:{
     fontFamily : 'Roboto-Medium',
     color : Colors.appHeaderDarkColor,
+  },
+  starContainer:{
+    width : deviceWidth * .2375,
+  },
+  starButtonStyle:{
+    width: deviceWidth * .0314,
   },
   jobDescription:{
     fontSize : responsiveFontSize(1.4),

@@ -14,6 +14,7 @@ import { Container, Header, Left, Body, Label, Right, Button, Icon,
   Title, Content, Input,Item, Form, Textarea,
   Text } from 'native-base';
 import PropTypes from 'prop-types';
+import { responsiveFontSize } from 'react-native-responsive-dimensions';
 
 //import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
@@ -43,7 +44,25 @@ const JobListItem = (props) => {
     <View style = {styles.container}>
       <View style={styles.innerContainer1}>
         <View style={styles.textContainer}>
-          <Text style={styles.title}>Creative Chaos LTD</Text>
+          <View style={styles.headerContainer}>
+            <Text style={styles.title}>Creative Chaos LTD</Text>
+            <View style={styles.starContainer}>
+              <StarRating
+                disabled={true}
+                emptyStar={'ios-star'}
+                fullStar={'ios-star'}
+                halfStar={'ios-star-half'}
+                iconSet={'Ionicons'}
+                maxStars={5}
+                starSize = {responsiveFontSize(1.69)}
+                rating={props.starCount}
+                selectedStar={(rating) => this.onStarRatingPress(rating)}
+                fullStarColor={Colors.starRatingColor}
+                emptyStarColor = {Colors.emptyStarColor}
+                buttonStyle ={styles.starButtonStyle}
+              />
+            </View>
+          </View>
           <Text style={styles.jobDescription}>{this.experienceStory}</Text>
         </View>
       </View>
