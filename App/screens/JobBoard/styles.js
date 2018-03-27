@@ -8,6 +8,17 @@ const deviceWidth = Dimensions.get('window').width;
 
 const styles = MediaQueryStyleSheet.create({
   container:{
+    backgroundColor : Global.Colors.appSemiWhiteBackground,
+    flex:1,
+    
+  },
+  flatListContainer:{
+    backgroundColor : Global.Colors.appSemiWhiteBackground,
+  },
+  flatList:{
+    flex:1,
+    paddingTop : deviceHeight * .015,
+    backgroundColor : Global.Colors.appSemiWhiteBackground,
   },
 });
 

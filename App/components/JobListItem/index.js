@@ -39,6 +39,7 @@ const JobListItem = (props) => {
   rate = '$2000 - $2500';
 
   return(
+    <TouchableOpacity onPress={props.onPress}>
     <View style = {styles.container}>
       <View style={styles.innerContainer1}>
         <View style={styles.textContainer}>
@@ -53,15 +54,18 @@ const JobListItem = (props) => {
         </View>
       </View>
     </View>
+    </TouchableOpacity>
   )
 }
 
 JobListItem.propTypes = {
+  onPress : PropTypes.func,
   hasAvatarLoaded : PropTypes.bool,
   starCount : PropTypes.number,
 };
   
 JobListItem.defaultProps = {
+  onPress : ()=>Alert.alert('hello'),
   hasAvatarLoaded : true,
   starCount : 3,
 }

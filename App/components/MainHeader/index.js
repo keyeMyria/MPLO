@@ -27,14 +27,19 @@ import screens from '../../global/screens';
 const MainHeader = (props) => {
 
     function getBellName(){
-      if (props.notificationsOff)
+      if (props.rightIconName === 'bell')
       {
-        return 'ios-notifications-off'
+        if (props.notificationsOff)
+        {
+          return 'ios-notifications-off'
+        }
+        else
+        {
+          return 'ios-notifications'
+        }
       }
       else
-      {
-        return 'ios-notifications'
-      }
+        return props.rightIconName;
     }
 
     function getIconTheme(){
@@ -87,6 +92,8 @@ MainHeader.propTypes = {
   titleURL : PropTypes.string,
   onMenuPress : PropTypes.func,
   onNotificationpress : PropTypes.func,
+  leftIconName : PropTypes.string,
+  rightIconName : PropTypes.string,
 };
   
 MainHeader.defaultProps = {
@@ -95,6 +102,8 @@ MainHeader.defaultProps = {
   isDarkTheme : false,
   onMenuPress : () => Alert.alert('onpress'),
   onNotificationpress : () => Alert.alert('onpress'),
+  leftIconName : 'menu',
+  rightIconName : 'bell',
 }
   
 export default MainHeader;

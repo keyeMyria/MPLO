@@ -5,7 +5,7 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
-  Image,
+  Image, FlatList,
   Dimensions, Alert, StatusBar,
   AsyncStorage, ActivityIndicator, Text as RNText
 } from 'react-native';
@@ -30,7 +30,11 @@ class ViewsOptionsScreen extends Component {
 
   constructor(props){
     super(props);
-    this.state = { };
+    this.state = { 
+      jobList : [
+        1,2,3,4,5,6,7
+      ]
+    };
   }
 
   componentDidMount() {
@@ -46,11 +50,22 @@ class ViewsOptionsScreen extends Component {
   }
 
   render() {
-    
     return(
       <View style = {styles.container}>
         <StatusBar/>
-        <Global.Components.Header2 title='JOB BOARD'/>
+        <Global.Components.MainHeader title='JOB BOARD' rightIconName='md-search'/>
+        <View style={{flex:1,paddingBottom : deviceHeight * .015,}}>
+          <FlatList
+            style={styles.flatList}
+            key={1}
+            data={this.state.jobList}
+            keyExtractor={item => item}
+            renderItem={({ item }) => {
+              //return(<Components.LandingPageSliderItem id = {item.id}/>)
+              return <Global.Components.JobListItem onPress={() => Alert.alert(item.toString())}/>
+            }}
+          />
+        </View>
       </View>
     )
   }

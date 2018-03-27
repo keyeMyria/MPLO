@@ -47,6 +47,7 @@ module.exports = {
     appPrimaryRedColor : '#e91d62',
     appHeaderLightColor : '#bbbbbd',
     appHeaderDarkColor : '#002b41',
+    appSemiWhiteBackground : '#f0f4f6',
 
     appPrimaryTextDarkColor : '#2e3941',
     createProfileButton: '#e0eff0',

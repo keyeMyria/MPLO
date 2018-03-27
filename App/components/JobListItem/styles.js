@@ -17,8 +17,8 @@ const styles = MediaQueryStyleSheet.create({
     //borderWidth : 1,
     // shadowOffset:{ height: 20,  },
      elevation:3,
-    marginTop : 20,
     backgroundColor:Colors.white,
+    marginBottom : deviceHeight * .013,
   },
   innerContainer1:{
     height : deviceHeight * .141,

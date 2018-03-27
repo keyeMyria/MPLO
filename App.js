@@ -17,7 +17,7 @@ registerScreens();
 const navigatorStyle = { navBarHidden: true }
 
 Navigation.startSingleScreenApp({
-  screen:screens.TEMP,
+  screen:screens.JOB_BOARD,
   drawer: screens.DRAWER
   }
 );
